@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Serez-vous le prochain agent de la DGSE ?</title>
+<!-- Latest compiled and minified CSS -->
+
+    <!-- Bootstrap -->
+    <link href="./vendor/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/quizz.css">
+    </style>
+  </head>
+  <body class="container">
+    
+    <header>
+      <h1>Serez-vous le prochain agent de la DGSE ?</h1>
+    </header>
+
+    <main>
+      <section id="choix-langues">
+        <h2>Quelles langues parlez vous ?</h2>
+        <div class="text-muted">Sélectionnez un ou plusieurs choix</div>
+        <form>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="anglais">Anglais
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="allemand">Allemand
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="espagnol">Espagnol
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="italien">Italien
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="mandarin">Mandarin
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="arabe">Arabe
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="russe">Russe
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="persan">Persan
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="turc">Turc
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="japonais">Japonais
+            </label>
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit">Valider</button>
+          <button class="btn btn-default" type="submit">Je ne parle aucune de ces langues</button>
+        </form>
+      </section>
+
+      <section id="test-langues">
+        <!-- Si aucune langue sélectionnée, on saute la question. 
+              Toastr : c'est dommage, voyons si vous avez d'autres compétences -->
+
+        <!-- Test de la langue la plus rare parmi celles sélectionnées -->
+        <h2>Êtes-vous bien sur de parler anglais ?</h2>
+        <blockquote>
+          "I really enjoy spending time at home, reading books and watching movies"
+        </blockquote>
+        <div class="text-muted">Cliquez sur la bonne traduction</div>
+        <button class="btn btn-default">J'aime être chez moi, lire des livres et voir des films</button>
+        <button class="btn btn-default">J'apprécie vraiment d'être à la maison, à lire des livres et à regarder des films</button>
+
+        <!-- Si bonne traduction, 
+            si langue pas rare, Toastr : c'est bien, vous maitrisez les bases
+            si langue rare, Toastr : impressionnant, ...-->
+      </section>
+
+      <section id="geographie">
+        <h2>Géographie désormais, où est le Kirghizistan ?</h2>
+        <div class="text-muted">Cliquez sur le pays sur cette carte de l'Asie</div>
+        <img src="./assets/images/asia.svg" width="100%"></img>
+
+        <!-- Si il clique au bon endroit, Toastr et question suivante -->
+        <!-- Si il ne clique pas au bon endroit, deuxième essai pour un point en moins -->
+        <!-- Si c'est raté, Toastr échec et question suivante -->
+      </section>
+
+
+      <section id="culture-generale">
+        <h2></h2>
+      </section>
+
+    </main>
+
+    <footer>
+      
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Custom -->
+    <script src="./js/main.js"></script>
+    <script src="./js/quizz.js"></script>
+  </body>
+</html>
