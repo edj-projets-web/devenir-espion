@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Serez-vous le prochain agent de la DGSE ?</title>
-<!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
 
     <!-- Bootstrap -->
     <link href="./vendor/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Toastr -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +35,7 @@
 
     <main>
       <section id="choix-langues">
-        <h2>Quelles langues parlez vous ?</h2>
+        <h2>Nous recherchons des langues rares. Quelles langues parlez vous ?</h2>
         <div class="text-muted">Sélectionnez un ou plusieurs choix</div>
         <form>
           <div class="checkbox">
@@ -85,42 +89,358 @@
             </label>
           </div>
           <button class="btn btn-primary btn-lg" type="submit">Valider</button>
-          <button class="btn btn-default" type="submit">Je ne parle aucune de ces langues</button>
+          <button class="btn btn-default" type="submit" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences">Je ne parle aucune de ces langues</button>
         </form>
       </section>
 
-      <section id="test-langues">
         <!-- Si aucune langue sélectionnée, on saute la question. 
               Toastr : c'est dommage, voyons si vous avez d'autres compétences -->
 
         <!-- Test de la langue la plus rare parmi celles sélectionnées -->
-        <h2>Êtes-vous bien sur de parler anglais ?</h2>
-        <blockquote>
-          "I really enjoy spending time at home, reading books and watching movies"
-        </blockquote>
-        <div class="text-muted">Cliquez sur la bonne traduction</div>
-        <button class="btn btn-default">J'aime être chez moi, lire des livres et voir des films</button>
-        <button class="btn btn-default">J'apprécie vraiment d'être à la maison, à lire des livres et à regarder des films</button>
+        <section>
+          <h2>Êtes-vous bien sûr de parler anglais ?</h2>
+            <blockquote>
+              "In the kingdom of the blind, the one-eyed is king"
+            </blockquote>
+              <div class="text-muted">Cliquez sur la bonne traduction</div>
+                  <button class="btn btn-default" data-success="C'est bien, mais on aurait apprécié un peu d'originalité" data-points="linguiste:1,analyste:1,action:1,crypto:1">
+                  Au royaume des aveugles, les borgnes sont rois
+                  </button>
+                  <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                  Au château des aveugles, le cyclope est roi
+                  </button>
+        </section>
+
+        <section>
+          <h2>Êtes-vous sûr de bien parler allemand ?
+          </h2>
+            <blockquote>
+              "Selbsterkenntnis ist der erste schritt zur besserung"
+            </blockquote>
+               <div class="text-muted"> 
+                  Cliquez sur la bonne traduction
+               </div>
+                  <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                  L'introspection est la première des besognes
+                  </button>
+                  <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2">
+                  La connaissance de soi est le premier pas vers l'amélioration
+                  </button> 
+        </section>
+
+        <section>
+          <h2>Êtes-vous sûr de bien parler espagnol ?
+          </h2>
+            <blockquote>
+              Dime con quién andas, y te diré quién eres
+            </blockquote>
+              <div class="text-muted"> 
+                Cliquez sur la bonne traduction
+              </div>
+                <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2">
+                  Dis-moi qui tu fréquentes, je te dirai qui tu es
+                </button>
+                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                  Dis-moi qui tu aides, et je te dirai ce que tu vaux
+                </button>
+        </section>
+
+        <section>
+          <h2>
+            Êtes-vous sûr de bien parler italien ?
+          </h2>
+            <blockquote>
+                A lavar la testa all'asino ci si perde il ranno e il sapone
+            </blockquote>
+              <div class="text-muted">Cliquez sur la bonne traduction</div>
+                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                  A laver la tête de tout le monde, on perd son temps et son savon
+                </button>
+                <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2">
+                  Laver la tête d'un âne, c'est perdre son temps et sa lessive
+                </button>
+        </section>
+
+
+        <section>
+          <h2>
+          Êtes-vous sûr de de bien parler mandarin ?
+          </h2>
+          <blockquote>
+            几家欢喜几家愁 (Jǐ jiā huān xǐ jǐ jiā chóu)
+          </blockquote>
+              <div class="text-muted"> 
+              Cliquez sur la bonne traduction
+              </div>
+                <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-point="linguiste:5">
+                    Le malheur des uns fait le bonheur des autres
+                </button>
+                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                    Être malheureux est une voie vers le bonheur
+                </button>
+        </section>
+
+        <section>
+          <h2>
+              Êtes-vous sûr de bien parler russe ? 
+          </h2>
+            <blockquote>
+                Кому везет в картах, тому не везет в любви (Komu ne vezet v kartakh, tomu ne vezet v lubvi)
+            </blockquote>
+              <div class="text-muted"> 
+                  Cliquez sur la bonne traduction
+              </div>
+                <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-point="linguiste:5">
+                    Qui a de la chance aux jeux, n'a pas de chance en amour 
+                </button>
+                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                    Être chanceux en jeu garantit la chance en amour
+                </button>
+        </section>
+
+
+        <section>
+          <h2>
+            Êtes-vous sûr de bien parler japonais ?
+          </h2>
+            <blockquote>
+                きのうのはなはきょうのゆめ (kinou no hana wa kyou no yume) 
+            </blockquote>
+                <div class="text-muted"> 
+                Cliquez sur la bonne traduction
+                </div>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                        Une fleur d'hier mourra aujourd'hui 
+                    </button>
+                    <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5">
+                        La fleur d'hier est le rêve d'aujourd'hui
+                    </button>
+        </section>
+
+        <section>
+          <h2>
+          Êtes-vous sûr de bien parler persan ?
+          </h2>
+            <blockquote>
+                Nâm e boland beh az bâm e boland 
+            </blockquote>
+                <div class="text-muted">
+                    Cliquez sur la bonne traduction
+                </div>
+                    <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5">
+                          Pour un homme une bonne réputation vaut mieux que la richesse
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
+                          La réputation d'un homme n'a dégal que sa richesse
+                    </button>
+        </section>
 
         <!-- Si bonne traduction, 
             si langue pas rare, Toastr : c'est bien, vous maitrisez les bases
             si langue rare, Toastr : impressionnant, ...-->
-      </section>
+
 
       <section id="geographie">
-        <h2>Géographie désormais, où est le Kirghizistan ?</h2>
-        <div class="text-muted">Cliquez sur le pays sur cette carte de l'Asie</div>
-        <img src="./assets/images/asia.svg" width="100%"></img>
+        <h2>
+            Où est le Kenya ?
+        </h2>
+           <div class="text-muted">
+                Cliquez sur le pays sur cette carte de l'Afrique
+           </div>
+              <img src="./assets/images/africa.svg" width="100%"></img>
 
         <!-- Si il clique au bon endroit, Toastr et question suivante -->
         <!-- Si il ne clique pas au bon endroit, deuxième essai pour un point en moins -->
         <!-- Si c'est raté, Toastr échec et question suivante -->
       </section>
-
-
-      <section id="culture-generale">
-        <h2></h2>
+      
+      <section id="histoire">
+        <h2>
+          Quand a eu lieu la Guerre de Cent ans ?
+        </h2>
+          <div class="text-muted">
+              Sélectionnez la bonne réponse
+          </div>
+              <button class="btn btn-default" data-success="Un coup de chance ?" data-points="analyste:2">
+                    1337-1453
+              </button>
+              <button class="btn btn-default" data-error="Ca s'est joué à rien...">
+                    1358-1458
+              </button>
+              <button class="btn btn-default" data-error="Vous avez raté les cours de CM1 ?">
+                    1296-1312
+              </button>
       </section>
+
+    <section id="Test de mémoire">
+        <h2>
+        Regardez-bien cette photo 
+        </h2>
+        <!-- Mettre la photo prise par Mégane -->
+    </section>
+
+      <section id="société">
+        <h2>
+          Que signifie le sigle AME ?
+        </h2>
+          <div class="text-muted">
+              Sélectionnez la bonne réponse
+          </div>
+                <button class="btn btn-default" data-success="Exact !">
+                    Aide Médicale de l'Etat
+                </button>
+                <button class="btn btn-default" data-error="Raté !"> 
+                    Assistante Maternelle d'Education
+                </button>
+                <button class="btn btn-default" data-error="Raté !">
+                    Aide à la Mission d'Education
+                </button>
+      </section>
+
+<!-- Transition. Encadré Texte : "Vous avez passé la première épreuve. Ne vous réjouissez pas trop vite, c'était la plus facile. Vous allez maintenant être mis en situation. Vous êtes prêt ?" -->
+<!-- Bouton : oui je suis prêt sur modèle du bouton "validez" -->
+
+<button class="btn btn-primary btn-lg" type="submit">Je suis prêt</button>
+
+      <section id="sport">
+        <h2>
+          Chez nous, on aime les sportifs. L'êtes-vous ?
+        </h2>
+          <div class="text-muted">
+              Sélectionnez votre réponse
+          </div>
+              <button class="btn btn-default">
+                    Oui
+              </button>
+              <button class="btn btn-default">
+                    Non
+              </button>
+      </section>
+
+          <!-- Si lu'tilisateur a cliqué sur "Oui" on vérifie-->
+
+        <section id="oui-sport">
+          <h2>
+              Combien de temps mettez-vous pour faire un semi-marathon ?
+          </h2>
+              <div class="text-muted">
+                  Sélectionnez votre réponse
+              </div>
+                  <button class="btn btn-default" data-success="C'est un temps raisonnable. Bravo !" data-points="action:2">
+                      Deux heures
+                  </button>
+                  <button class="btn btn-default" data-error="Un peu long pour un sportif..." data-points="action:1">
+                      Cinq heures
+                  </button>
+                  <button class="btn btn-default" data-error="Vous mentez... Nous n'aimons pas ça !" data-points="action=-2,linguiste=-2,crypto=-2,analyste:-2">
+                      Trente minutes
+                  </button>
+        </section>
+
+                <!-- Si utilisateur a cliqué sur Deux heures
+                    Toastr : "C'est un temps raisonnable. Bravo !" -->
+                <!-- Si utilisateur a cliqué sur Cinq heures 
+                    Toastr : "Un peu long pour un sportif..." -->
+                <!-- Si utilisateur a cliqué sur Trente minutes 
+                    Toastr : "Vous mentez... Nous n'aimons pas ça" -->
+
+          <!-- Si l'utilisateur a cliqué sur "Non" on passe à la question suivante -->
+
+        <section id="rendez-vous secret">
+            <h2>
+                Vous avez rendez-vous avec une source secrète dans un café. Vous arrivez le premier. Où vous installez-vous ?
+            </h2>
+                <div class="text-muted">
+                  Sélectionnez la bonne réponse
+                </div>
+                  <button class="btn btn-default">
+                      Proche de la sortie 
+                  </button>
+                  <button class="btn btn-default">
+                      Au bar
+                  </button>
+                  <button class="btn btn-default" data-info=" 'Un membre des services de renseignement se placera toujours dans un coin, dos au mur, pour être capable de surveiller toute la salle' Yvonnick Denoël, historien spécialiste des services de renseignement" data-points="action:2">
+                      Dans un coin
+                  </button>
+          </section>
+
+          <section id="proche malade">
+              <h2>
+                  Votre conjoint est gravement malade. Il/elle menace de vous quitter si vous ne restez pas à son chevet. Votre chef vous envoie en mission, malgré vos réticences. Que faites-vous ?
+              </h2>
+                <div class="text-muted">
+                      Sélectionnez la bonne réponse
+                </div>
+                  <button class="btn btn-default" data-points="action:2">
+                        Je pars en mission
+                  </button>
+                  <button class="btn btn-default" data-info="Refuser une mission entraîne 'beaucup de punitions ultérieures', d'après le Colonel Thierry Jouan, ancien espion de la DGSE">
+                        Je refuse la mission
+                  </button>
+          </section>
+
+          <section id="filature">
+              <h2>
+                  Vous devez suivre un homme à travers la ville, sans argent ni titre de transport. Que faites-vous ?
+              </h2>
+                  <div class="text-muted">
+                      Sélectionnez la bonne réponse
+                  </div>
+                      <button class="btn btn-default">
+                          Je me déplace à pied, quitte à courir
+                      </button>
+                      <button class="btn btn-default" data-info="'On attendra d'un bon agent qu'il invente une histoire et réussisse à se faire transporter ou à obtenir de l'argent' explique Yvonnick Denoël, historien spécialiste des services de renseignement" data-points="action:2">
+                          J'interpelle le chauffeur d'une voiture en lui disant que je dois me rendre à l'hôpital voir ma soeur malade
+                      </button>
+                      <button class="btn btn-default">
+                          Je prends le bus, en fraudant discrètement car je n'ai pas d'argent 
+                      </button>
+          </section>
+
+            <section id="rendez-vous source">
+                <h2>
+                  Alors que vous aviez rendez-vous avec une source, vous vous apercevez que vous êtes suivi. Que faites-vous ?
+                </h2>
+                    <div class="text-muted">
+                        Sélectionnez la bonne réponse
+                    </div>
+                        <button class="btn btn-default" data-error="Mauvaise stratégie. Un bon agent aurait annulé son rendez-vous et poursuivi sa journée comme si de rien n'était, en allant au musée comme n'importe quel touriste, par exemple">
+                            Je casse la filature pour que l'homme arrête de me suivre
+                        </button>
+                        <button class="btn btn-default" data-sucess="C'était le minimum, effectivement !" data-points="action:1">
+                            J'annule le rendez-vous avec ma source
+                        </button>
+                        <button class="btn btn-default" data-success="Bonne initiative !" data-points="action:2">
+                            Je vais au musée, en étant toujours suivi
+                        </button>
+            </section>
+
+      <section id="mission Algérie">
+              <h2>
+                Vous êtes en mission en Algérie. La police débarque dans votre appartement et découvre de la drogue sous votre lit. Que répondez-vous ?
+              </h2>
+                  <div class="text-muted">
+                Sélectionnez la bonne réponse
+                  </div>
+                    <button class="btn btn-default" data-error="Dévoiler sa couverture est une grave erreur...">
+                        "Cette drogue est une couverture. Je ne suis pas dealer, je travaille pour les services secrets français. Vérifiez auprès de votre hiérarchie"
+                    </button>
+                    <button class="btn btn-default" data-success="Très bonne décision ! Ils pourront sûrement vous aider" data-points="action:2">
+                        "Je nie et j'appelle l'ambassade"
+                    </button>
+                    <button class="btn btn-default" data-error="Aïe... Vous risquez de griller votre couverture !">
+                        "Je fais semblant de ne pas parler leur langue"
+                    </button>
+      </section>
+
+
+
+
+
+
+
+
+
 
     </main>
 
@@ -132,6 +452,8 @@
     <script src="./vendor/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Toastr -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
     <!-- Custom -->
     <script src="./js/main.js"></script>
