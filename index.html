@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Boilerplate</title>
+    <title>Serez-vous le prochain agent de la DGSE ?</title>
+<!-- Latest compiled and minified CSS -->
 
     <!-- Bootstrap -->
-    <link href="./vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,15 +20,22 @@
     <![endif]-->
 
     <!-- Custom -->
-    <link href="./css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    </style>
   </head>
-  <body>
+  <body class="container">
+    
     <header>
-      
+      <h1>
+          Serez-vous le prochain agent de la DGSE ?
+        </h1>
     </header>
     <main>
-      <section>
-        <h1>Hello, world!</h1>
+      <section class="lead intro">
+        “Bonjour, vous êtes admis à passer le concours car vous avez rempli les critères suivants : vous n’avez pas été condamné par la justice, vous avez la nationalité française et vous n’êtes pas binational. Le concours va commencer. Bonne chance.”
+        <br><br>
+        <a class="btn btn-primary btn-lg" href="./quizz.html">Je suis prêt</a>
       </section>
     </main>
     <footer>
@@ -37,6 +46,7 @@
     <script src="./vendor/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     
     <!-- Custom -->
     <script src="./js/main.js"></script>
