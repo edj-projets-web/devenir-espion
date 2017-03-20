@@ -26,11 +26,13 @@ $(function() {
 	//////CARTE
 	// Lorsqu'on clique sur un pays de la carte qui n'est pas le Kenya, on a perdu
 	$('#carte-quizz path:not(#Kenia)').click(function() {
-		toastr.error('tu n\'as pas gagné');
+		toastr.error('Nous vous accordons exceptionnellement une deuxième chance. Ne la gaspillez pas !');
+		toastr.error('Vous êtes nul en géographie, ou vos doigts sont trop gros pour viser dans le mille ?');
 	});
 	// Lorsqu'on clique sur le Kenya, on a gagné
 	$('#carte-quizz path#Kenia').click(function() {
-		toastr.success('tu as gagné');
+		toastr.success('C\'est beaucoup mieux. Tâchez de rester concentré(e) !');
+		toastr.success('Bravo, en plein dans le mille!');
 	});
 	////////
 
