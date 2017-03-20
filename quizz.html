@@ -9,7 +9,6 @@
     <!-- Latest compiled and minified CSS -->
     <!-- Bootstrap -->
     <link href="./vendor/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
     <!-- Toastr -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,7 +27,6 @@
     <header>
       <h1>Serez-vous le prochain agent de la DGSE ?</h1>
     </header>
-
     <main>
     <section id="choix-langues">
       <h2>Nous recherchons des langues rares. Quelles langues parlez vous ?</h2>
@@ -85,7 +83,7 @@
           </label>
         </div>
         <button class="btn btn-primary btn-lg" type="submit">Valider</button>
-        <button class="btn btn-default" type="submit" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences">Je ne parle aucune de ces langues</button>
+        <button class="btn btn-default" type="submit" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences !">Je ne parle aucune de ces langues</button>
       </form>
     </section>
     <!-- Si aucune langue sélectionnée, on saute la question.
@@ -362,7 +360,7 @@
       <div class="text-muted">
         Sélectionnez la bonne réponse
       </div>
-      <button class="btn btn-default" data-success="Exact !">
+      <button class="btn btn-default" data-success="Exact !" data-point="analyste:2">
       Aide Médicale de l'Etat
       </button>
       <button class="btn btn-default" data-error="Raté !">
@@ -379,7 +377,7 @@
       <div class="text-muted">
         Sélectionnez votre réponse
       </div>
-      <button class="btn btn-default" data-success="Intéressant !">
+      <button class="btn btn-default" data-success="Intéressant !" data-points="crypto:5">
       Oui
       </button>
       <button class="btn btn-default" data-error="Ne perdez pas espoir, seuls 1.1000 employés de la DGSE sur 4500 possèdent des compétences techniques">
@@ -406,402 +404,404 @@
     </section>
     <section id="biologie">
       <h2>
-      Vous estimez-vous à laise dans un des domaines suivants : biologie, chimie, nucléaire, mathématiques ? 
+      Vous estimez-vous à laise dans un des domaines suivants : biologie, chimie, nucléaire, mathématiques ?
       </h2>
       <div class="text-muted">
         Sélectionnez votre réponse
       </div>
-      <button class="btn btn-default" data-succes="Vous êtes en bonne voie pour devenir le prochain 'chiffre' de la boîte !">
+      <button class="btn btn-default" data-succes="Vous êtes en bonne voie pour devenir le prochain 'chiffre' de la boîte !" data-points="crypto:2">
       Oui
       </button>
-      <button class="btn btn-default" data-error="Tout le monde ne peut pas être un crack technique...">
+      <button class="btn btn-default" data-error="Alors, pas geek pour un sou ?">
       Non
       </button>
+    </section>
+     <main>
+      <section class="transition 1">
+        Vous avez passé la première épreuve. Ne vous réjouissez pas trop vite, c'était la plus facile. Vous allez maintenent être mis en situation. Prêt ?
+        <button class="btn btn-primary btn-lg" type="submit">Je suis prêt</button>
       </section>
-
-      <!--  Transition. Encadré Texte : "Vous avez passé la première épreuve. Ne vous réjouissez pas trop vite, c'était la plus facile. Vous allez maintenant être mis en situation. Vous êtes prêt ?" -->-->
-      <!-- Bouton : oui je suis prêt sur modèle du bouton "validez" -->
-
-      <button class="btn btn-primary btn-lg" type="submit">Je suis prêt</button>
-      <section id="sport">
-        <h2>
-        Chez nous, on aime les sportifs. L'êtes-vous ?
-        </h2>
-        <div class="text-muted">
-          Sélectionnez votre réponse
-        </div>
-        <button class="btn btn-default">
-        Oui
-        </button>
-        <button class="btn btn-default">
-        Non
-        </button>
-      </section>
-      <!-- Si lu'tilisateur a cliqué sur "Oui" on vérifie-->
-      <section id="oui-sport">
-        <h2>
-        Combien de temps mettez-vous pour faire un semi-marathon ?
-        </h2>
-        <div class="text-muted">
-          Sélectionnez votre réponse
-        </div>
-        <button class="btn btn-default" data-success="C'est un temps raisonnable. Bravo !" data-points="action:2">
-        Deux heures
-        </button>
-        <button class="btn btn-default" data-error="Un peu long pour un sportif..." data-points="action:1">
-        Cinq heures
-        </button>
-        <button class="btn btn-default" data-error="Vous mentez... Nous n'aimons pas ça !" data-points="action=-2,linguiste=-2,crypto=-2,analyste:-2">
-        Trente minutes
-        </button>
-      </section>
-      <!-- Si utilisateur a cliqué sur Deux heures
-      Toastr : "C'est un temps raisonnable. Bravo !" -->
-      <!-- Si utilisateur a cliqué sur Cinq heures
-      Toastr : "Un peu long pour un sportif..." -->
-      <!-- Si utilisateur a cliqué sur Trente minutes
-      Toastr : "Vous mentez... Nous n'aimons pas ça" -->
-      <!-- Si l'utilisateur a cliqué sur "Non" on passe à la question suivante -->
-      <section id="rendez-vous secret">
-        <h2>
-        Vous avez rendez-vous avec une source secrète dans un café. Vous arrivez le premier. Où vous installez-vous ?
-        </h2>
-        <div class="text-muted">
-          Sélectionnez la bonne réponse
-        </div>
-        <button class="btn btn-default">
-        Proche de la sortie
-        </button>
-        <button class="btn btn-default">
-        Au bar
-        </button>
-        <button class="btn btn-default" data-info=" 'Un membre des services de renseignement se placera toujours dans un coin, dos au mur, pour être capable de surveiller toute la salle' Yvonnick Denoël, historien spécialiste des services de renseignement" data-points="action:2">
-        Dans un coin
-        </button>
-      </section>
-      <section id="proche malade">
-        <h2>
-        Votre conjoint est gravement malade. Il/elle menace de vous quitter si vous ne restez pas à son chevet. Votre chef vous envoie en mission, malgré vos réticences. Que faites-vous ?
-        </h2>
-        <div class="text-muted">
-          Sélectionnez la bonne réponse
-        </div>
-        <button class="btn btn-default" data-points="action:2">
-        Je pars en mission
-        </button>
-        <button class="btn btn-default" data-info="Refuser une mission entraîne 'beaucup de punitions ultérieures', d'après le Colonel Thierry Jouan, ancien espion de la DGSE">
-        Je refuse la mission
-        </button>
-      </section>
-      <section id="filature">
-        <h2>
-        Vous devez suivre un homme à travers la ville, sans argent ni titre de transport. Que faites-vous ?
-        </h2>
-        <div class="text-muted">
-          Sélectionnez la bonne réponse
-        </div>
-        <button class="btn btn-default">
-        Je me déplace à pied, quitte à courir
-        </button>
-        <button class="btn btn-default" data-info="'On attendra d'un bon agent qu'il invente une histoire et réussisse à se faire transporter ou à obtenir de l'argent' explique Yvonnick Denoël, historien spécialiste des services de renseignement" data-points="action:2">
-        J'interpelle le chauffeur d'une voiture en lui disant que je dois me rendre à l'hôpital voir ma soeur malade
-        </button>
-        <button class="btn btn-default">
-        Je prends le bus, en fraudant discrètement car je n'ai pas d'argent
-        </button>
-      </section>
-      <section id="rendez-vous source">
-        <h2>
-        Alors que vous aviez rendez-vous avec une source, vous vous apercevez que vous êtes suivi. Que faites-vous ?
-        </h2>
-        <div class="text-muted">
-          Sélectionnez la bonne réponse
-        </div>
-        <button class="btn btn-default" data-error="Mauvaise stratégie. Un bon agent aurait annulé son rendez-vous et poursuivi sa journée comme si de rien n'était, en allant au musée comme n'importe quel touriste, par exemple">
-        Je casse la filature pour que l'homme arrête de me suivre
-        </button>
-        <button class="btn btn-default" data-sucess="C'était le minimum, effectivement !" data-points="action:1">
-        J'annule le rendez-vous avec ma source
-        </button>
-        <button class="btn btn-default" data-success="Bonne initiative !" data-points="action:2">
-        Je vais au musée, en étant toujours suivi
-        </button>
-      </section>
-      <section id="mission Algérie">
-        <h2>
-        Vous êtes en mission en Algérie. La police débarque dans votre appartement et découvre de la drogue sous votre lit. Que répondez-vous ?
-        </h2>
-        <div class="text-muted">
-          Sélectionnez la bonne réponse
-        </div>
-        <button class="btn btn-default" data-error="Dévoiler sa couverture est une grave erreur...">
-        "Cette drogue est une couverture. Je ne suis pas dealer, je travaille pour les services secrets français. Vérifiez auprès de votre hiérarchie"
-        </button>
-        <button class="btn btn-default" data-success="Très bonne décision ! Ils pourront sûrement vous aider" data-points="action:2">
-        "Je nie et j'appelle l'ambassade"
-        </button>
-        <button class="btn btn-default" data-error="Aïe... Vous risquez de griller votre couverture !">
-        "Je fais semblant de ne pas parler leur langue"
-        </button>
-      </section>
-    <!-- Transition entretien psychologique et enquête de sécurité -->
-
-      <section id="situation-matrimoniale">
+    <section id="sport">
       <h2>
-      Quelle est votre situation maritale ? 
+      Chez nous, on aime les sportifs. L'êtes-vous ?
       </h2>
       <div class="text-muted">
-      Sélectionnez votre réponse
+        Sélectionnez votre réponse
       </div>
       <button class="btn btn-default">
-      En couple
+      Oui
+      </button>
+      <button class="btn btn-default" data-error="Vous êtes honnête, c'est déjà ça !">
+      Non
+      </button>
+    </section>
+    <!-- Si lu'tilisateur a cliqué sur "Oui" on vérifie-->
+    <section id="oui-sport">
+      <h2>
+      Combien de temps mettez-vous pour faire un semi-marathon ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-success="C'est un temps raisonnable. Bravo !" data-points="action:2">
+      Deux heures
+      </button>
+      <button class="btn btn-default" data-error="Un peu long pour un sportif..." data-points="action:1">
+      Cinq heures
+      </button>
+      <button class="btn btn-default" data-error="Vous mentez... Nous n'aimons pas ça !" data-points="action=-2,linguiste=-2,crypto=-2,analyste:-2">
+      Trente minutes
+      </button>
+    </section>
+    <!-- Si utilisateur a cliqué sur Deux heures
+    Toastr : "C'est un temps raisonnable. Bravo !" -->
+    <!-- Si utilisateur a cliqué sur Cinq heures
+    Toastr : "Un peu long pour un sportif..." -->
+    <!-- Si utilisateur a cliqué sur Trente minutes
+    Toastr : "Vous mentez... Nous n'aimons pas ça" -->
+    <!-- Si l'utilisateur a cliqué sur "Non" on passe à la question suivante -->
+    <section id="rendez-vous secret">
+      <h2>
+      Vous avez rendez-vous avec une source secrète dans un café. Vous arrivez le premier. Où vous installez-vous ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez la bonne réponse
+      </div>
+      <button class="btn btn-default">
+      Proche de la sortie
       </button>
       <button class="btn btn-default">
-      Célibataire
+      Au bar
+      </button>
+      <button class="btn btn-default" data-info=" 'Un membre des services de renseignement se placera toujours dans un coin, dos au mur, pour être capable de surveiller toute la salle' Yvonnick Denoël, historien spécialiste des services de renseignement" data-points="action:2">
+      Dans un coin
+      </button>
+    </section>
+    <section id="proche malade">
+      <h2>
+      Votre conjoint est gravement malade. Il/elle menace de vous quitter si vous ne restez pas à son chevet. Votre chef vous envoie en mission, malgré vos réticences. Que faites-vous ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez la bonne réponse
+      </div>
+      <button class="btn btn-default" data-points="action:2">
+      Je pars en mission
+      </button>
+      <button class="btn btn-default" data-info="Refuser une mission entraîne 'beaucup de punitions ultérieures', d'après le Colonel Thierry Jouan, ancien espion de la DGSE">
+      Je refuse la mission
+      </button>
+    </section>
+    <section id="filature">
+      <h2>
+      Vous devez suivre un homme à travers la ville, sans argent ni titre de transport. Que faites-vous ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez la bonne réponse
+      </div>
+      <button class="btn btn-default">
+      Je me déplace à pied, quitte à courir
+      </button>
+      <button class="btn btn-default" data-info="'On attendra d'un bon agent qu'il invente une histoire et réussisse à se faire transporter ou à obtenir de l'argent' explique Yvonnick Denoël, historien spécialiste des services de renseignement" data-points="action:2">
+      J'interpelle le chauffeur d'une voiture en lui disant que je dois me rendre à l'hôpital voir ma soeur malade
       </button>
       <button class="btn btn-default">
-      Marié sans enfant
+      Je prends le bus, en fraudant discrètement car je n'ai pas d'argent
       </button>
-      <button class="btn btn-default">
-      Marié avec des enfants 
+    </section>
+    <section id="rendez-vous source">
+      <h2>
+      Alors que vous aviez rendez-vous avec une source, vous vous apercevez que vous êtes suivi. Que faites-vous ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez la bonne réponse
+      </div>
+      <button class="btn btn-default" data-error="Mauvaise stratégie. Un bon agent aurait annulé son rendez-vous et poursuivi sa journée comme si de rien n'était, en allant au musée comme n'importe quel touriste, par exemple">
+      Je casse la filature pour que l'homme arrête de me suivre
       </button>
+      <button class="btn btn-default" data-sucess="C'était le minimum, effectivement !" data-points="action:1">
+      J'annule le rendez-vous avec ma source
+      </button>
+      <button class="btn btn-default" data-success="Bonne initiative !" data-points="action:2">
+      Je vais au musée, en étant toujours suivi
+      </button>
+    </section>
+    <section id="mission Algérie">
+      <h2>
+      Vous êtes en mission en Algérie. La police débarque dans votre appartement et découvre de la drogue sous votre lit. Que répondez-vous ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez la bonne réponse
+      </div>
+      <button class="btn btn-default" data-error="Dévoiler sa couverture est une grave erreur...">
+      "Cette drogue est une couverture. Je ne suis pas dealer, je travaille pour les services secrets français. Vérifiez auprès de votre hiérarchie"
+      </button>
+      <button class="btn btn-default" data-success="Très bonne décision ! Ils pourront sûrement vous aider" data-points="action:2">
+      "Je nie et j'appelle l'ambassade"
+      </button>
+      <button class="btn btn-default" data-error="Aïe... Vous risquez de griller votre couverture !">
+      "Je fais semblant de ne pas parler leur langue"
+      </button>
+    </section>
+
+      <section class="transition 2">
+        Vous allez démarrer la troisième épreuve. Nous allons maintenant mettre vos nerfs à l'épreuve lors d'un entretien psychologique. Soyez sincère"
+        <button class="btn btn-primary btn-lg" type="submit">Prêt !</button>
       </section>
 
-      <section id="proches-pays-étrangers">
+    <section id="nouveau-job">
+      <h2>
+        Vous démarrez un nouveau job dans une nouvelle ville ou dans un pays inconnu : 
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-error="S'intégrer c'est bien, prendre le temps de comprendre votre nouvel environnement, c'est mieux !">
+      Je suis stimulé par tout ce qu'il se passe, je prends des informations un peu partout et je m'intègre très vite
+      </button>
+      <button class="btn btn-default" data-success="Bonne attitude. A la DGSE on aime les éléments qui ne se précipitent pas vers l'inconnu et qui prennent le temps de connaître les nouvelles situations qui se présentent à eux" data-points="linguiste:1,crypto:1,analyste:2,action:2">
+      Je mets du temps avant de me sentir à l'aise, j'aime comprendre l'environnement dans lequel j'arrive avant de l'aborder
+      </button>
+    </section>
+    <section>
+      <h2>
+        Votre nouveau patron est très exigeant et vous donne une liste de choses à faire vraiment impossible :
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      <div>
+      <button class='btn btn-default' data-success="Bonne réponse. On aime les agents minutieux sachant se concentrer sur un objectif précis" data-points="linguiste:2,crypto:2,action:2,analyste:2">
+      Je préfère me concentrer sur une seule tâche à la fois, quitte à ne pas atteindre tous mes objectifs
+      </button>
+      <button class="btn btn-default" data-error="Ce trait de votre personnalité laisse supposer un éparpillement et des difficultés de concentration. Pas terrible...">
+      Je sais faire plusieurs choses en même temps donc je donne mon maximum pour réaliser toutes mes tâches
+      </button>
+    </section>
+    <section>
+      <h2>
+        Vos collègues sont tous très différents et vous apprennez à les connaître : 
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      <button class="btn btn-default" data-error="Vous pensiez que c'était un atout, n'est-ce pas ? Il est important d'être sociable, mais s'ouvrir trop rapidement est un défaut pour un agent !">
+      Je suis sociable, ouvert(e) aux autres et je n'hésite pas à faire des compliments
+      </button>
+      <button class="btn btn-default" data-success="Bien ! Ce n'est pas que nous aimons les gens négatifs, mais nous préférons les regards critiques" data-points="linguiste:1,analyste:2,crypto:2,action:2">
+      Je remarque d'abord les failles et les défauts des personnes qui m'entourent
+      </button>
+    </section>
+    <section>
+      <h2>
+        Vous êtes célibataire et vous rencontrez quelqu'un qui vous plaît au bureau : 
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-error="Vous avez l'air d'avoir une personnalité très passionnée. C'est bien, mais pas chez nous !">
+      Vous y pensez matin et soir mais tant pis, pas question d'entamer une relation ! Ce n'est pas professionnel et vous risquez d'être déconcentré(e)
+      <button class="btn btn-default" data-success="Loin d'être une agence matrimoniale, la DGSE préfèrent les agents qui savent faire la part des choses entre le professionnel et l'intime, sans se laisser perturber" data-points="linguiste:2,analyste:2,crypto:2,action:2">
+      Le travail est une chose, l'amour en est une autre : vous ne vous prenez pas la tête et s'il doit se passer quelque chose, ce sera en dehors des horaires de bureau
+      </button>
+    </section>
+
+    <!-- TEST DE LOYAUTE Une longue série d'ordres absurdes donnés par la DGSE apparait sur l'écran disant : "clique ici", "clique là", "double clique ici" accompagnée d'un bouton en bas "passer l'épreuve". L'utilisateur qui tient jusqu'au bout sans passer son tour gagne l'épreuve de loyauté -->
+
+    <section>
+      <h2>
+        Seriez-vous loyal à la DGSE ?
+      </h2>
+    </section>
+
+    <button class="btn btn-primary btn-lg" type="submit">Passer l'épreuve</button>
+
+    <section>
+      <h2>
+        Savez-vous résister au stress ? 
+      </h2>
+    </section>
+    <!-- TEST DE SANG FROID EN SITUATION DE STRESS : Afficher un panneau factice annonçant un virus avec deux options :"quitter le jeu pa sécurité" EN GROS et "Attendre 20 secondes pour que la DGSE s'occupe de nettoyer l'appareil" en plus petti. Ceux qui quittent le jeux perdent l'épreuve mais ne quittent pas réellement le jeu -->
+
+
+    <button class="btn btn-primary btn-lg" type="submit">Quitter le jeu par sécurité</button>
+    <button class="btn btn-default" type="submit">Attendre que la DGSE s'occupe de nettoyer l'appareil</button>
+
+
+      <section class="transition 3">
+        Bravo, vous venez de terminer les épreuves. Nos recruteurs sont en train d'étudier votre candidature. Mais les compétences ne suffisent pas. Nous devons être sûrs de pouvoir compter sur vous. Passons à l'ultime phase de recrutement : l'enquête de sécurité...
+        <button class="btn btn-primary btn-lg" type="submit">Prêt !</button>
+      </section>
+
+    <section id="situation-matrimoniale">
+      <h2>
+      Quelle est votre situation maritale ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-success="Bon point pour vous, le service recheche ouvertement des 'profils stables'">
+      En couple
+      </button>
+      <button class="btn btn-default" data-error="Aïe, le service recherche ouvertement des 'profils stables', fini le temps des célibataires sans attache" data-points="linguiste:-1,analyste:-1,crypto:-1,action:-1">
+      Célibataire
+      </button>
+      <button class="btn btn-default" data-success="Bon point pour vous, le service recherche ouvertement des 'profils stables'" data-points="analyste:1,linguiste:1,crypto:1,action:1">
+      Marié sans enfant
+      </button>
+      <button class="btn btn-default" data-success="Bon point pour vous, le service recherche des profils à la vie privée stable et bien établie" data-points="linguiste:2,analyste:2,crypto:2,action:2">
+      Marié avec des enfants
+      </button>
+    </section>
+    <section id="proches-pays-étrangers">
       <h2>
       Certains de vos proches sont-ils établis dans les pays suivants, déconseillés par le Quai d'Orsay ?
       </h2>
       <form>
         <select class="selectpicker" multiple>
-          <option>Mustard</option>
-          <option>Ketchup</option>
-          <option>Relish</option>
+          <option>Afghanistan</option>
+          <option>Algérie</option>
+          <option>Bahreïn</option>
+          <option>Burkina Faso</option>
+          <option>Burundi</option>
+          <option>Comores</option>
+          <option>Djibouti</option>
+          <option>Egypte</option>
+          <option>Emirats Arabes Unis</option>
+          <option>Ethiopie</option>
+          <option>Indonésie</option>
+          <option>Irak</option>
+          <option>Iran</option>
+          <option>Israël</option>
+          <option>Jordanie</option>
+          <option>Kenya</option>
+          <option>Koweït</option>
+          <option>Liban</option>
+          <option>Malaisie</option>
+          <option>Mali</option>
+          <option>Maroc</option>
+          <option>Mauritanie</option>
+          <option>Niger</option>
+          <option>Nigéria</option>
+          <option>Ouganda</option>
+          <option>Oman</option>
+          <option>Ouzbékistan</option>
+          <option>Pakistan</option>
+          <option>Philippines</option>
+          <option>Qatar</option>
+          <option>Sénégal</option>
+          <option>Somalie</option>
+          <option>Soudan</option>
+          <option>Syrie</option>
+          <option>Tanzanie</option>
+          <option>Tchad</option>
+          <option>Territoires palestiniens</option>
+          <option>Tunisie</option>
+          <option>Turquie</option>
+          <option>Yémen</option>
         </select>
-
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Afghanistan">Afghanistan
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Algérie">Algérie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Bahreïn">Bahreïn
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Burkina Faso">Burkina Faso
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Burundi">Burundi
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Comores">Comores
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Djibouti">Djibouti
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Egypte">Egypte
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Emirats Arabes Unis">Emirats Arabes Unis
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Ethiopie">Ethiopie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Indonésie">Indonésie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Irak">Irak
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Iran">Iran
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Israël">Israël
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Jordanie">Jordanie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Kenya">Kenya
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Koweït">Koweït
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Liban">Liban
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Malaisie">Malaisie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Mali">Mali
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Maroc">Maroc
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Mauritanie">Mauritanie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Niger">Niger
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Nigéria">Nigéria
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="Ouganda">Ouganda
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Oman">Oman
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Ouzbékistan">Ouzbékistan
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Pakistan">Pakistan
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Philippines">Philippines
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Qatar">Qatar
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Sénégal">Sénégal
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Somalie">Somalie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Soudan">Soudan
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Syrie">Syrie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Tanzanie">Tanzanie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Tchad">Tchad
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Territoires palestiniens">Territoires palestiniens
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Tunisie">Tunisie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Turquie">Turquie
-          </label>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="Yémen">Yémen
-          </label>
-        </div>
-        <button class="btn btn-primary btn-lg" type="submit">Valider</button>
-        <button class="btn btn-default" type="submit" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences">Aucun de mes proches ne vit dans un de ces pays</button>
+        <button class="btn btn-primary btn-lg" type="submit" data-error="Notre vigilance va s'accroître">Valider
+        </button>
+        <button class="btn btn-default" type="submit" data-success="Bien !" data-points="analyste:2,linguiste:2,crypto:2,action:2">Aucun de mes proches ne vit dans un de ces pays</button>
       </form>
     </section>
+    
     <section id="proches-journalistes">
-    <h2>
-    Certains de vos proches sont-ils journalistes ? 
-    </h2>
+      <h2>
+      Certains de vos proches sont-ils journalistes ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-error="'Nous interrogeons le candidat sur son environnement familial pour voir, par exemple, s'il n'y a pas de conflit d'intérêt possible' explique Rémy G., chef du service des ressources humaines">
+      Oui
+      </button>
+      <button class="btn btn-default" data-succes="'Nous interrogeons le candidat sur son environnement familial pour voir, par exemple, s'il n'y a pas de conflit d'intérêt possible' explique Rémy G., chef du service des ressources humaines" data-points="linguiste:2,analyste:2,crypto:2,action:2">
+      Non
+      </button>
+    </section>
+    <section id="parti-politique">
+      <h2>
+      Êtes-vous personnellement encarté dans un parti politique ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-error="Mauvais point pour vous, la DGSE privilégie les profils neutres">
+      Oui
+      </button>
+      <button class="btn btn-default" data-success="Tant mieux, la DGSE privilégie les profils neutres" data-points="analyste:2,linguiste:2,crypto:2,action:2">
+      Non
+      </button>
+    </section>
+    <section id="crimes">
+      <h2>
+      Pensez-vous que les crimes soient toujours punis ?
+      </h2>
+      <div class="text-muted">
+        Sélectionez votre réponse
+      </div>
+      <button class="btn btn-default" data-success="Bon choix !" data-points="analyste:2,linguiste:2,crypto:2,action:2">
+      Je n'ai pas d'avis tranché sur la question
+      </button>
+      <button class="btn btn-default" data-error="Nous aurions préféré que vous n'ayiez pas d'avis tranché sur la question">
+      La justice fait toujours son travail correctement
+      </button>
+      <button class="btn btn-default" data-error="Nous aurions préféré que vous n'ayiez pas d'avis tranché sur la question">
+      La justice est souvent trop laxiste
+      </button>
+    </section>
+    <section id="fumeur">
+      <h2>
+      A quelle fréquence fumez-vous ?
+      </h2>
+      <div class="text-muted">
+        Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-success=" 'Alcools, cigarettes, drogues, toutes les addictions sont à bannir car elles révèlent une faiblesse de caractère' explique Pierre Martinet, ancien cadre de la DGSE" data-points="analyste:2,linguiste:2,crypto:2,action:2">
+      Je ne fume pas
+      </button>
+      <button class="btn btn-default" data-success=" 'Alcools, cigarettes, drogues, toutes les addictions sont à bannir, car elles révèlent une faiblesse de caractère' explique Pierre Martinet, ancien cadre de la DGSE" data-points="analyste:1,action:1,crypto:1,linguiste:1">
+      De manière occasionnelle
+      </button>
+      <button class="btn btn-default" data-error=" 'Alcools, cigarettes, drogues, toutes les addictions sont à bannir, car elles révèlent une faiblesse de caractère' explique Pierre Martinet, ancien cadre de la DGSE">
+      Régulièrement
+      </button>
+    </section>
+    <section>
+      <h2>
+      Qu'avez-vous dit à vos proches sur votre candidature ?
+      </h2>
+      <div class="text-muted">
+      Sélectionnez votre réponse
+      </div>
+      <button class="btn btn-default" data-success="Discrétion... Vous avez tout compris" data-points="analyste:1,crypto:1,linguiste:1,action:1">
+      Rien
+      </button>
+      <button class="btn btn-default" data-success="C'est le meilleur alibi !" data-points="analyste:2,crypto:2,linguiste:2,action:2">
+      Je passe un concours du ministère de la Défense
+      </button>
+      <button class="btn btn-default" data-error="Annoncez-le sur les réseaux sociaux tant que vous y êtes !">
+      Je passe le concours de la DGSE
+      </button>
+    </section>
+
+      <section class="lead intro">
+        Le recrutement est maintenant terminé. Le verdict va tomber...
+      </section>
 
 
-      </main>
-      <footer>
-        
-      </footer>
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="./vendor/jquery/dist/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="./vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-      <!-- Toastr -->
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </section>
+    </main>
+    <footer>
       
-      <!-- Custom -->
-      <script src="./js/main.js"></script>
-      <script src="./js/quizz.js"></script>
-    </body>
-  </html>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./vendor/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Toastr -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
+    <!-- Custom -->
+    <script src="./js/main.js"></script>
+    <script src="./js/quizz.js"></script>
+  </body>
+</html>
