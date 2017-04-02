@@ -32,23 +32,26 @@
     <main>
         <section id="choix-langues">
             <h2>Nous recherchons des langues rares. Quelles langues parlez vous ?</h2>
-            <div class="text-muted">Sélectionnez un ou plusieurs choix</div>
             <form data-next="test-langues" action="#">
+              <label>
+                <div class="text-muted">Sélectionnez un ou plusieurs choix</div>
                 <select class="selectpicker" multiple>
-                    <option value="anglais">Anglais</option>
-                    <option value="allemand">Allemand</option>
-                    <option value="espagnol">Espagnol</option>
-                    <option value="italien">Italien</option>
-                    <option value="mandarin">Mandarin</option>
-                    <option value="arabe">Arabe</option>
-                    <option value="russe">Russe</option>
-                    <option value="persan">Persan</option>
-                    <option value="turc">Turc</option>
-                    <option value="japonais">Japonais</option>
+                  <option value="anglais">Anglais</option>
+                  <option value="allemand">Allemand</option>
+                  <option value="espagnol">Espagnol</option>
+                  <option value="italien">Italien</option>
+                  <option value="mandarin">Mandarin</option>
+                  <option value="arabe">Arabe</option>
+                  <option value="russe">Russe</option>
+                  <option value="persan">Persan</option>
+                  <option value="turc">Turc</option>
+                  <option value="japonais">Japonais</option>
                 </select>
-                <br />
+              </label>
+              <p>
                 <button class="btn btn-primary btn-lg" type="submit">Valider</button>
-                <button class="btn btn-default" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences">Je ne parle aucune de ces langues</button>
+                <button class="btn btn-default btn-lg" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences">Je ne parle aucune de ces langues</button>
+              </p>
             </form>
         </section>
         <!-- Test de la langue la plus rare parmi celles sélectionnées -->
@@ -148,13 +151,13 @@
                     Cliquez sur la bonne traduction
                 </div>
                 <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-point="linguiste:5">
-                    Tu savais qu'un atome est plus petit qu'un grain de sable ? 
+                    Tu savais qu'un atome est plus petit qu'un grain de sable ?
                 </button>
                 <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Tu savais qu'un grain de sable est plus petit qu'un atome ? 
+                    Tu savais qu'un grain de sable est plus petit qu'un atome ?
                 </button>
                 <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Tu savais qu'un grain de sable est plus grand qu'un atome ? 
+                    Tu savais qu'un grain de sable est plus grand qu'un atome ?
                 </button>
             </div>
 
@@ -186,7 +189,7 @@
                     Cliquez sur la bonne traduction
                 </div>
                 <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Elle s'endort au lever du soleil et se réveille lorsqu'il se couche 
+                    Elle s'endort au lever du soleil et se réveille lorsqu'il se couche
                 </button>
                 <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5">
                     Elle se réveille au lever du soleil et s'endort lorsqu'il se couche
@@ -219,7 +222,7 @@
                     Kolay gelsin
                 </blockquote>
                 <div class="text-muted">
-                    Cliquez sur la bonne traduction 
+                    Cliquez sur la bonne traduction
                 </div>
                 <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
                     Que cela vienne facilement
