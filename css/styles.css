@@ -34,3 +34,11 @@ body {
 .btn.btn-default:not(.dropdown-toggle) {
   box-shadow: 5px 5px 0 0  #eee;
 }
+body #toast-container .toast {
+  width:350px; 
+}
+
+body #toast-container > div {
+  opacity: 1;
+  font-size: 1.8rem;
+}
