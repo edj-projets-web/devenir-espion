@@ -6,6 +6,13 @@ $(function() {
         crypto: 0
     };
 
+    // Affiche le toastr 5 secondes (avant toute interaction)
+    toastr.options.timeOut = 5 * 1000;
+    // Affiche le toastr 5 secondes après une interaction
+    toastr.options.extendedTimeOut = toastr.options.timeOut;
+    // Affiche une progress bar dans le toastr
+    toastr.options.progressBar = true;
+
     // Lorsque l'on click sur n'importe quel bouton, on gèle tous les boutons présent dans la même <section>
     // $('button:not(.dropdown-toggle)').click(function() {
     //     $(this).parents('section').find('button').prop('disabled', true);
