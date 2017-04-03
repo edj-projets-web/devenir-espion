@@ -6,12 +6,59 @@ $(function() {
         crypto: 0
     };
 
-    // Affiche le toastr 5 secondes (avant toute interaction)
-    toastr.options.timeOut = 5 * 1000;
-    // Affiche le toastr 5 secondes après une interaction
-    toastr.options.extendedTimeOut = toastr.options.timeOut;
-    // Affiche une progress bar dans le toastr
-    toastr.options.progressBar = true;
+    var overlay = {
+      selectedSection: null,
+      setSection: function(val) {
+        this.selectedSection = val;
+      },
+      findNextSection: function() {
+        var currentIdx = $('section[id]').index($('section[id]:visible'));
+        return $('section[id]').eq(currentIdx + 1).attr('id');
+      },
+      default: function(msg, cls, next) {
+        next = next || this.selectedSection || this.findNextSection();
+        $(".overlay .content").html(msg);
+        $(".overlay").attr('class', 'overlay overlay--' + cls).fadeIn();
+        $(".overlay .btn").off('click').on('click', function() {
+          // Display the rright section
+          if(next) displaySection(next);
+          // Hide the overlay
+          $(".overlay").fadeOut();
+        });
+      },
+      error: function(msg, next) {
+        this.default(msg, 'error', next);
+      },
+      success: function(msg, next) {
+        this.default(msg, 'success', next);
+      }
+    };
+
+    $('form').submit(function(evt) {
+        evt.preventDefault();
+        var sectionId = $(this).closest('section').attr('id');
+        var next = $(this).data('next');
+        switch (sectionId) {
+            case 'choix-langues':
+              if(!evt.target.cancelled) {
+                answers.languages = $('#choix-langues select').val();
+              }
+
+              if (answers.languages.length == 0) return selectSection('geographie');
+              return selectSection(next);
+              break;
+            case 'test-langues':
+                var lang = evt.target.parentElement.id.split('-')[1];
+                var idLang = answers.languages.indexOf(lang);
+                answers.languages.splice(idLang,1);
+                if(answers.languages.length === 0) return selectSection('geographie');
+                return selectSection('test-langues');
+                break;
+            default:
+                console.log('default')
+                return selectSection(next);
+        }
+    });
 
     // Lorsque l'on click sur n'importe quel bouton, on gèle tous les boutons présent dans la même <section>
     // $('button:not(.dropdown-toggle)').click(function() {
@@ -20,42 +67,38 @@ $(function() {
 
     // Lorsque l'on click sur un bouton avec un attribut data-error, affiche un toast avec le contenu de l'attribut
     $('button[data-error]').click(function() {
-        toastr.error($(this).data('error'));
+      setTimeout(function() {
+        overlay.error($(this).data('error'));
+      }, 50);
     });
 
     // Lorsque l'on click sur un bouton avec un attribut data-success, affiche un toast avec le contenu de l'attribut
     $('button[data-success]').click(function() {
-        toastr.success($(this).data('success'));
+      setTimeout(function() {
+        overlay.success($(this).data('success'));
+      }, 50);
     });
 
     //////CARTE
     // Lorsqu'on clique sur un pays de la carte qui n'est pas le Kenya, on a perdu
     $('#carte-quizz path:not(#Kenia)').click(function() {
         if (answers.wrongCountries === 0) {
-          toastr.error('Nous vous accordons exceptionnellement une deuxième chance. Ne la gaspillez pas !');
+          overlay.error('Nous vous accordons exceptionnellement une deuxième chance. Ne la gaspillez pas !', null);
           // Augmente le compteur de mauvais pays
           answers.wrongCountries++;
         } else {
-          toastr.error('Vous êtes nul en géographie, ou vos doigts sont trop gros pour viser dans le mille ?');
-          displaySection('histoire');
+          overlay.error('Vous êtes nul en géographie, ou vos doigts sont trop gros pour viser dans le mille ?', 'histoire');
         }
     });
     // Lorsqu'on clique sur le Kenya, on a gagné
     $('#carte-quizz path#Kenia').click(function() {
         if (answers.wrongCountries === 0) {
-            toastr.success('Bravo, en plein dans le mille!');
-            displaySection('histoire');
+          overlay.success('Bravo, en plein dans le mille!', 'histoire');
         } else {
-            toastr.success('C\'est beaucoup mieux. Tâchez de rester concentré(e) !');
-            displaySection('histoire');
+          overlay.success('C\'est beaucoup mieux. Tâchez de rester concentré(e) !', 'histoire');
         }
     });
     ////////
-
-    // Lorsque l'on click sur un bouton sur un attribut data-warning, affiche un toast avec le contenu de l'attribut
-    $('button[data-info]').click(function() {
-        toastr.info($(this).data('info'));
-    });
 
     // Lorsque l'on click sur un buton avec un attribut data-points, ajoute un nombre de point à chaque profile
     $('button[data-points]').click(function() {
@@ -84,35 +127,13 @@ $(function() {
 
     displaySection('choix-langues');
 
-    $('form').submit(function(evt) {
-        evt.preventDefault();
-        var sectionId = $(this).closest('section').attr('id');
-        var next = $(this).data('next');
-        switch (sectionId) {
-            case 'choix-langues':
-              if(!evt.target.cancelled) {
-                answers.languages = $('#choix-langues select').val();
-              }
-              if (answers.languages.length == 0) return displaySection('geographie');
-              return displaySection(next);
-              break;
-            case 'test-langues':
-                var lang = evt.target.parentElement.id.split('-')[1];
-                var idLang = answers.languages.indexOf(lang);
-                answers.languages.splice(idLang,1);
-                if(answers.languages.length === 0) return displaySection('geographie');
-                return displaySection('test-langues');
-                break;
-            default:
-                console.log('default')
-                return displaySection(next);
-        }
-    });
+    function selectSection(id) {
+      overlay.setSection(id);
+    }
 
     function displaySection(id) {
         $('section').hide();
         $('section#' + id).show();
-
         switch (id) {
             case 'test-langues':
                 $('#test-langues div').hide();

@@ -43,6 +43,7 @@ section {
 
 main {
   width:45%;
+  min-width: 660px;
   padding:16px 25px;
   background: url('../assets/images/pattern.png');
   position: absolute;
@@ -90,4 +91,51 @@ main blockquote {
   position: absolute;
   top:0;
   left:0;
+}
+
+.overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: #323845;
+  z-index:1000;
+  color: white;
+  text-align: left;
+  overflow: auto;
+  padding:10vh 5vw;
+  display: none;
+}
+
+.overlay .content {
+  color:white;
+  font-size: 1.6em;
+  line-height: 1.5;
+  margin-bottom: 2vh;
+  padding-left:110px;
+  position: relative;
+}
+
+.overlay .content:before {
+  position: absolute;
+  left:0;
+  top:0;
+  background: no-repeat center center;
+  background-size: auto 100%;
+  width: 100px;
+  height: 100px;
+  content:"";
+}
+
+.overlay--error .content:before {
+  background-image:url('../assets/images/error.svg');
+}
+
+.overlay--success .content:before {
+  background-image:url('../assets/images/success.svg');
+}
+
+.overlay .btn {
+  margin-left:100px;
 }
