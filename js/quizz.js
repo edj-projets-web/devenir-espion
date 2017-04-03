@@ -69,14 +69,14 @@ $(function() {
     $('button[data-error]').click(function() {
       setTimeout(function() {
         overlay.error($(this).data('error'));
-      }, 50);
+      }.bind(this), 50);
     });
 
     // Lorsque l'on click sur un bouton avec un attribut data-success, affiche un toast avec le contenu de l'attribut
     $('button[data-success]').click(function() {
       setTimeout(function() {
         overlay.success($(this).data('success'));
-      }, 50);
+      }.bind(this), 50);
     });
 
     //////CARTE
