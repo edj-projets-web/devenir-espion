@@ -67,5 +67,6 @@ main header h1 {
 }
 
 main .btn.btn-default.btn-block.btn-lg {
-	margin-top:1.5rem;
+	margin-top:1.5rem !important;
+	white-space: normal;
 }
