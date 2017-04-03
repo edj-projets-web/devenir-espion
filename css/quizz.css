@@ -5,3 +5,17 @@ section {
 #test-langues .test-langue {
 	display: none;
 }
+
+.bootstrap-select {
+	margin-bottom: 2.5rem;
+}
+
+.btn.dropdown-toggle.bs-placeholder.btn-info {
+  background:white;
+  border-color: #bf9f00;
+}
+
+.btn.dropdown-toggle {
+  padding: 10px 16px;
+  font-size: 18px;
+}

@@ -26,3 +26,11 @@ body {
     50% { opacity:0; }
     100% { opacity:1; }
 }
+
+.btn.btn-primary {
+  box-shadow: 5px 5px 0 0  #bf9f00;
+}
+
+.btn.btn-default:not(.dropdown-toggle) {
+  box-shadow: 5px 5px 0 0  #eee;
+}
