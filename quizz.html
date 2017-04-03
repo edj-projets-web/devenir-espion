@@ -24,12 +24,13 @@
     <link rel="stylesheet" type="text/css" href="css/quizz.css">
 </head>
 
-<body class="container">
-    <header>
-        <h1>Serez-vous le prochain agent des renseignements français?</h1>
-    </header>
+<body>
+    <div class="main-background"></div>
     <main>
-        <section id="choix-langues">
+        <header>
+          <h1>Serez-vous le prochain agent des renseignements français?</h1>
+        </header>
+        <section data-background="assets/images/cultureg.jpeg" id="choix-langues">
             <h2>Nous recherchons des langues rares. Quelles langues parlez vous ?</h2>
             <form data-next="test-langues" action="#">
               <label>
@@ -55,7 +56,7 @@
             </form>
         </section>
         <!-- Test de la langue la plus rare parmi celles sélectionnées -->
-        <section id="test-langues">
+        <section data-background="assets/images/cultureg.jpeg" id="test-langues">
             <div id="test-anglais" class="test-langue">
                 <h2>Êtes-vous bien sûr de parler anglais ?</h2>
                 <blockquote>
@@ -241,7 +242,7 @@
         <!-- Si bonne traduction,
     si langue pas rare, Toastr : c'est bien, vous maitrisez les bases
     si langue rare, Toastr : impressionnant, ...-->
-        <section id="geographie">
+        <section data-background="assets/images/cultureg.jpeg" id="geographie">
             <h2>Où est le Kenya ?</h2>
             <div class="text-muted">
                 Cliquez sur le pays sur cette carte de l'Afrique
@@ -348,7 +349,7 @@
             <!-- Si il ne clique pas au bon endroit, deuxième essai pour un point en moins -->
             <!-- Si c'est raté, Toastr échec et question suivante -->
         </section>
-        <section id="histoire">
+        <section data-background="assets/images/cultureg.jpeg" id="histoire">
             <h2>Quand a eu lieu la Guerre de Cent ans ?</h2>
             <div class="text-muted">
                 Sélectionnez la bonne réponse
@@ -363,12 +364,12 @@
                 1296-1412
             </button>
         </section>
-        <section id="memoire">
+        <section data-background="assets/images/cultureg.jpeg" id="memoire">
             <h2>Regardez-bien cette photo</h2>
             <img src="question5.jpg"
             <!-- Mettre la photo prise par Mégane -->
         </section>
-        <section id="societe">
+        <section data-background="assets/images/cultureg.jpeg" id="societe">
             <h2>Que signifie le sigle AME ?</h2>
             <div class="text-muted">
                 Sélectionnez la bonne réponse
@@ -383,7 +384,7 @@
                 Aide à la Mission d'Education
             </button>
         </section>
-        <section id="code-notions">
+        <section data-background="assets/images/cultureg.jpeg" id="code-notions">
             <h2>Disposez-vous de notions de code ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -396,7 +397,7 @@
             </button>
         </section>
         <!-- Si l'utilisateur répond Oui à cette question, il doit répondre à une question de vérification -->
-        <section id="code-fonction">
+        <section data-background="assets/images/cultureg.jpeg" id="code-fonction">
             <h2>Que signifie cette fonction de code ?</h2>
             <div class="text-muted">
                 Sélectionnez la bonne réponse
@@ -411,7 +412,7 @@
                 xxxx
             </button>
         </section>
-        <section id="biologie">
+        <section data-background="assets/images/cultureg.jpeg" id="biologie">
             <h2>Vous estimez-vous à laise dans un des domaines suivants : biologie, chimie, nucléaire, mathématiques ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -427,7 +428,7 @@
             Vous avez passé la première épreuve. Ne vous réjouissez pas trop vite, c'était la plus facile. Vous allez maintenent être mis en situation. Prêt ?
             <button class="btn btn-primary btn-lg" type="submit">Je suis prêt</button>
         </section>
-        <section id="sport">
+        <section data-background="assets/images/situation.jpeg" id="sport">
             <h2>Chez nous, on aime les sportifs. L'êtes-vous ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -440,7 +441,7 @@
             </button>
         </section>
         <!-- Si lu'tilisateur a cliqué sur "Oui" on vérifie-->
-        <section id="sport-test">
+        <section data-background="assets/images/situation.jpeg" id="sport-test">
             <h2>Combien de temps mettez-vous pour faire un semi-marathon ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -456,13 +457,13 @@
             </button>
         </section>
         <!-- Si utilisateur a cliqué sur Deux heures
-Toastr : "C'est un temps raisonnable. Bravo !" -->
+        Toastr : "C'est un temps raisonnable. Bravo !" -->
         <!-- Si utilisateur a cliqué sur Cinq heures
-Toastr : "Un peu long pour un sportif..." -->
+        Toastr : "Un peu long pour un sportif..." -->
         <!-- Si utilisateur a cliqué sur Trente minutes
-Toastr : "Vous mentez... Nous n'aimons pas ça" -->
+        Toastr : "Vous mentez... Nous n'aimons pas ça" -->
         <!-- Si l'utilisateur a cliqué sur "Non" on passe à la question suivante -->
-        <section id="rendez-vous-secret">
+        <section data-background="assets/images/situation.jpeg" id="rendez-vous-secret">
             <h2>Vous avez rendez-vous avec une source secrète dans un café. Vous arrivez le premier. Où vous installez-vous ?</h2>
             <div class="text-muted">
                 Sélectionnez la bonne réponse
@@ -477,7 +478,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 Dans un coin
             </button>
         </section>
-        <section id="proche-malade">
+        <section data-background="assets/images/situation.jpeg" id="proche-malade">
             <h2>Votre conjoint est gravement malade. Il/elle menace de vous quitter si vous ne restez pas à son chevet. Votre chef vous envoie en mission, malgré vos réticences. Que faites-vous ?</h2>
             <div class="text-muted" data-error="Refuser une mission entraîne 'beaucup de punitions ultérieures', d'après le Colonel Thierry Jouan, ancien espion de la DGSE">
                 Sélectionnez la bonne réponse
@@ -489,7 +490,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 Je refuse la mission
             </button>
         </section>
-        <section id="filature">
+        <section data-background="assets/images/situation.jpeg" id="filature">
             <h2>Vous devez suivre un homme à travers la ville, sans argent ni titre de transport. Que faites-vous ?</h2>
             <div class="text-muted" data-error="'On attendra d'un bon agent qu'il invente une histoire et réussisse à se faire transporter ou à obtenir de l'argent' explique Yvonnick Denoël, historien spécialiste des services de renseignement">
                 Sélectionnez la bonne réponse
@@ -504,7 +505,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 Je prends le bus, en fraudant discrètement car je n'ai pas d'argent
             </button>
         </section>
-        <section id="rendez-vous-source">
+        <section data-background="assets/images/situation.jpeg" id="rendez-vous-source">
             <h2>Alors que vous aviez rendez-vous avec une source, vous vous apercevez que vous êtes suivi. Que faites-vous ?</h2>
             <div class="text-muted">
                 Sélectionnez la bonne réponse
@@ -519,7 +520,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 Je vais au musée, en étant toujours suivi
             </button>
         </section>
-        <section id="mission-algerie">
+        <section data-background="assets/images/situation.jpeg" id="mission-algerie">
             <h2>Vous êtes en mission en Algérie. La police débarque dans votre appartement et découvre de la drogue sous votre lit. Que répondez-vous ?</h2>
             <div class="text-muted">
                 Sélectionnez la bonne réponse
@@ -538,7 +539,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
             Vous allez démarrer la troisième épreuve. Nous allons maintenant mettre vos nerfs à l'épreuve lors d'un entretien psychologique. Soyez sincère"
             <button class="btn btn-primary btn-lg" type="submit">Prêt !</button>
         </section>
-        <section id="nouveau-job">
+        <section data-background="assets/images/" id="nouveau-job">
             <h2>Vous démarrez un nouveau job dans une nouvelle ville ou dans un pays inconnu : </h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -599,7 +600,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
             Bravo, vous venez de terminer les épreuves. Nos recruteurs sont en train d'étudier votre candidature. Mais les compétences ne suffisent pas. Nous devons être sûrs de pouvoir compter sur vous. Passons à l'ultime phase de recrutement : l'enquête de sécurité...
             <button class="btn btn-primary btn-lg" type="submit">Prêt !</button>
         </section>
-        <section id="situation-matrimoniale">
+        <section data-background="assets/images/" id="situation-matrimoniale">
             <h2>Quelle est votre situation maritale ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -617,7 +618,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 Marié avec des enfants
             </button>
         </section>
-        <section id="proches-pays-etrangers">
+        <section data-background="assets/images/" id="proches-pays-etrangers">
             <h2>Certains de vos proches sont-ils établis dans les pays suivants, déconseillés par le Quai d'Orsay ?</h2>
             <form>
                 <select class="selectpicker" multiple>
@@ -667,7 +668,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 <button class="btn btn-default" type="submit" data-success="Bien !" data-points="analyste:2,linguiste:2,crypto:2,action:2">Aucun de mes proches ne vit dans un de ces pays</button>
             </form>
         </section>
-        <section id="proches-journalistes">
+        <section data-background="assets/images/" id="proches-journalistes">
             <h2>Certains de vos proches sont-ils journalistes ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -679,7 +680,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 Non
             </button>
         </section>
-        <section id="parti-politique">
+        <section data-background="assets/images/" id="parti-politique">
             <h2>Êtes-vous personnellement encarté dans un parti politique ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse
@@ -691,7 +692,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 Non
             </button>
         </section>
-        <section id="crimes">
+        <section data-background="assets/images/" id="crimes">
             <h2>Pensez-vous que les crimes soient toujours punis ?</h2>
             <div class="text-muted">
                 Sélectionez votre réponse
@@ -706,7 +707,7 @@ Toastr : "Vous mentez... Nous n'aimons pas ça" -->
                 La justice est souvent trop laxiste
             </button>
         </section>
-        <section id="fumeur">
+        <section data-background="assets/images/" id="fumeur">
             <h2>A quelle fréquence fumez-vous ?</h2>
             <div class="text-muted">
                 Sélectionnez votre réponse

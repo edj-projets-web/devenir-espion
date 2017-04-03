@@ -69,6 +69,11 @@ $(function() {
           displaySection(next);
       });
 
+      var url = $('section#' + id).data('background');
+      if (url) {
+        $('.main-background').css("background-image", "url(" + url + ")");
+      }
+
       switch (id) {
           case 'test-langues':
               var languesChoices = $('#choix-langues select').val();
