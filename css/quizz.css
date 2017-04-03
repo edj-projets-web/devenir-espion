@@ -41,6 +41,18 @@ section {
   background:rgba(10, 10, 10, 0.4);
 }
 
+@media (max-width: 770px) {
+  main {
+    min-width: 0 !important;
+    width:auto !important;
+    right:0 !important;
+  }
+
+  .main-background {
+    display: none;
+  }
+}
+
 main {
   width:45%;
   min-width: 660px;
@@ -113,7 +125,7 @@ main blockquote {
   font-size: 1.6em;
   line-height: 1.5;
   margin-bottom: 2vh;
-  padding-left:110px;
+  padding-left:120px;
   position: relative;
 }
 
@@ -137,5 +149,5 @@ main blockquote {
 }
 
 .overlay .btn {
-  margin-left:100px;
+  margin-left:120px;
 }
