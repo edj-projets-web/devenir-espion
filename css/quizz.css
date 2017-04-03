@@ -75,3 +75,19 @@ main blockquote {
   background: black;
   font-size: 1.4em;
 }
+
+.map-wrap {
+    height:0;
+    margin-top:1.5rem;
+    padding-top:97.63%; /* 1200px/1230px */
+    position: relative;
+}
+
+.map-wrap svg {
+  height: 100%;
+  display:block;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
