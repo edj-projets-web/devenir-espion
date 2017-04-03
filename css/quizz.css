@@ -70,3 +70,8 @@ main .btn.btn-default.btn-block.btn-lg {
 	margin-top:1.5rem !important;
 	white-space: normal;
 }
+
+main blockquote {
+  background: black;
+  font-size: 1.4em;
+}
