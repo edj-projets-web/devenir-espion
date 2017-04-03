@@ -65,3 +65,7 @@ main header {
 main header h1 {
   font-weight: bolder;
 }
+
+main .btn.btn-default.btn-block.btn-lg {
+	margin-top:1.5rem;
+}
