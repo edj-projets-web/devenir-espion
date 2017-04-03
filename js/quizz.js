@@ -58,7 +58,7 @@ $(function() {
       size: 4
   });
 
-  displaySection('geographie');
+  displaySection('choix-langues');
 
   function displaySection(id) {
       $('section').hide();
