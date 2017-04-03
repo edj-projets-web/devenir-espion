@@ -24,13 +24,24 @@ $(function() {
     //////CARTE
     // Lorsqu'on clique sur un pays de la carte qui n'est pas le Kenya, on a perdu
     $('#carte-quizz path:not(#Kenia)').click(function() {
-        toastr.error('Nous vous accordons exceptionnellement une deuxième chance. Ne la gaspillez pas !');
-        toastr.error('Vous êtes nul en géographie, ou vos doigts sont trop gros pour viser dans le mille ?');
+        if (answers.wrongCountries === 0) {
+          toastr.error('Nous vous accordons exceptionnellement une deuxième chance. Ne la gaspillez pas !');
+          // Augmente le compteur de mauvais pays
+          answers.wrongCountries++;
+        } else {
+          toastr.error('Vous êtes nul en géographie, ou vos doigts sont trop gros pour viser dans le mille ?');
+          displaySection('histoire');
+        }
     });
     // Lorsqu'on clique sur le Kenya, on a gagné
     $('#carte-quizz path#Kenia').click(function() {
-        toastr.success('C\'est beaucoup mieux. Tâchez de rester concentré(e) !');
-        toastr.success('Bravo, en plein dans le mille!');
+        if (answers.wrongCountries === 0) {
+            toastr.success('Bravo, en plein dans le mille!');
+            displaySection('histoire');
+        } else {
+            toastr.success('C\'est beaucoup mieux. Tâchez de rester concentré(e) !');
+            displaySection('histoire');
+        }
     });
     ////////
 
@@ -60,7 +71,8 @@ $(function() {
 
     //Réponses sauvegardées
     var answers = {
-        'languesChoices': []
+        'languages': [],
+        'wrongCountries': 0
     }
 
     displaySection('choix-langues');
@@ -72,16 +84,16 @@ $(function() {
         switch (sectionId) {
             case 'choix-langues':
               if(!evt.target.cancelled) {
-                answers.languesChoices = $('#choix-langues select').val();
+                answers.languages = $('#choix-langues select').val();
               }
-              if (answers.languesChoices.length == 0) return displaySection('geographie');
+              if (answers.languages.length == 0) return displaySection('geographie');
               return displaySection(next);
               break;
             case 'test-langues':
                 var lang = evt.target.parentElement.id.split('-')[1];
-                var idLang = answers.languesChoices.indexOf(lang);
-                answers.languesChoices.splice(idLang,1);
-                if(answers.languesChoices.length === 0) return displaySection('geographie');
+                var idLang = answers.languages.indexOf(lang);
+                answers.languages.splice(idLang,1);
+                if(answers.languages.length === 0) return displaySection('geographie');
                 return displaySection('test-langues');
                 break;
             default:
@@ -97,7 +109,7 @@ $(function() {
         switch (id) {
             case 'test-langues':
                 $('#test-langues div').hide();
-                answers.languesChoices.forEach(function(val) {
+                answers.languages.forEach(function(val) {
                     $('div#test-' + val).show();
                 });
                 break;
