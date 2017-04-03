@@ -49,7 +49,7 @@
               </label>
               <p>
                 <button class="btn btn-primary btn-lg" type="submit">Valider</button>
-                <button class="btn btn-default btn-lg" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences">Je ne parle aucune de ces langues</button>
+                <button class="btn btn-default btn-lg" data-error="Dommage, c'était un point important... Espérons que vous avez d'autres compétences" data-points="linguiste:-2,analyste:0,action:0,crypto:0" onclick="this.form.cancelled=false;">Je ne parle aucune de ces langues</button>
               </p>
             </form>
         </section>
@@ -57,74 +57,83 @@
         <section id="test-langues">
             <div id="test-anglais" class="test-langue">
                 <h2>Êtes-vous bien sûr de parler anglais ?</h2>
-                <blockquote>
-                    "John is the best conductor I ever known"
-                </blockquote>
-                <div class="text-muted">Cliquez sur la bonne traduction</div>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs" data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    John est le meilleur conducteur que j'ai jamais connu
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    John est le meilleur chauffeur qu j'a jamais connu
-                </button>
-                <button class="btn btn-default" data-success="C'est bien, mais on aurait apprécié un peu d'originalité" data-points="linguiste:1,analyste:1,action:1,crypto1">
-                    John est le meilleur chef d'orchestre que j'ai jamais connu
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        "John is the best conductor I ever known"
+                    </blockquote>
+                    <div class="text-muted">Cliquez sur la bonne traduction</div>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs" data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        John est le meilleur conducteur que j'ai jamais connu
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        John est le meilleur chauffeur qu j'a jamais connu
+                    </button>
+                    <button class="btn btn-default" data-success="C'est bien, mais on aurait apprécié un peu d'originalité" data-points="linguiste:1,analyste:1,action:1,crypto:1" type="submit">
+                        John est le meilleur chef d'orchestre que j'ai jamais connu
+                    </button>
+                </form>
             </div>
             <div id="test-allemand" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler allemand ?</h2>
-                <blockquote>
-                    "Du hast dein Haar sehr eigenwillig frisiert"
-                </blockquote>
-                <div class="text-muted">
-                    Cliquez sur la bonne traduction
-                </div>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Tu as frisé tes cheveux de manière très originale
-                </button>
-                <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2">
-                    Tu as coiffé tes cheveux de manière très originale
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Tu as froissé tes cheveux et c'est original
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        "Du hast dein Haar sehr eigenwillig frisiert"
+                    </blockquote>
+                    <div class="text-muted">
+                        Cliquez sur la bonne traduction
+                    </div>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Tu as frisé tes cheveux de manière très originale
+                    </button>
+                    <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2" type="submit">
+                        Tu as coiffé tes cheveux de manière très originale
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Tu as froissé tes cheveux et c'est original
+                    </button>
+                </form>
             </div>
             <div id="test-espagnol" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler espagnol ?</h2>
-                <blockquote>
-                    "Los langostinos son uno de lors mariscos más consumidos"
-                </blockquote>
-                <div class="text-muted">
-                    Cliquez sur la bonne traduction
-                </div>
-                <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2">
-                    Les crevettes sontl'un des fruits de mer les plus consommés
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Les langoustines sont l'un des fruits de mer les plus consommés
-                </button>
-                <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2">
-                    Les crevettes sont l'un des fruits de mer les plus consumés
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        "Los langostinos son uno de lors mariscos más consumidos"
+                    </blockquote>
+                    <div class="text-muted">
+                        Cliquez sur la bonne traduction
+                    </div>
+                    <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2" type="submit">
+                        Les crevettes sontl'un des fruits de mer les plus consommés
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Les langoustines sont l'un des fruits de mer les plus consommés
+                    </button>
+                    <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2" type="submit">
+                        Les crevettes sont l'un des fruits de mer les plus consumés
+                    </button>
+                </form>
             </div>
             <div id="test-italien" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler italien ?</h2>
-                <blockquote>
-                    Vado matta per i confetti!
-                </blockquote>
-                <div class="text-muted">Cliquez sur la bonne traduction</div>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Je raffole des confettis !
-                </button>
-                <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2">
-                    Je raffole des dragées !
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Je raffole des bonbons !
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        Vado matta per i confetti!
+                    </blockquote>
+                    <div class="text-muted">Cliquez sur la bonne traduction</div>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Je raffole des confettis !
+                    </button>
+                    <button class="btn btn-default" data-success="Continuez, votre profil peut nous intéresser" data-points="linguiste:2,analyste:2" type="submit">
+                        Je raffole des dragées !
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Je raffole des bonbons !
+                    </button>
+                </form>
             </div>
             <div id="test-mandarin" class="test-langue">
                 <h2>Êtes-vous sûr de de bien parler mandarin ?</h2>
+                <form data-next="geographie" action="#">
                 <blockquote>
                     Māo pá shàng shū
                 </blockquote>
@@ -144,95 +153,105 @@
 
             <div id="test-arabe" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler arabe ?</h2>
-                <blockquote>
-                    أتعرف أن الذرات أصغر من حبة رمل ؟
-                </blockquote>
-                <div class="text-muted">
-                    Cliquez sur la bonne traduction
-                </div>
-                <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-point="linguiste:5">
-                    Tu savais qu'un atome est plus petit qu'un grain de sable ?
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Tu savais qu'un grain de sable est plus petit qu'un atome ?
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Tu savais qu'un grain de sable est plus grand qu'un atome ?
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        أتعرف أن الذرات أصغر من حبة رمل ؟
+                    </blockquote>
+                    <div class="text-muted">
+                        Cliquez sur la bonne traduction
+                    </div>
+                    <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-point="linguiste:5" type="submit">
+                        Tu savais qu'un atome est plus petit qu'un grain de sable ?
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Tu savais qu'un grain de sable est plus petit qu'un atome ?
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Tu savais qu'un grain de sable est plus grand qu'un atome ?
+                    </button>
+                </form>
             </div>
 
             </div>
             <div id="test-russe" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler russe ?</h2>
-                <blockquote>
-                    это школьные каникулы
-                </blockquote>
-                <div class="text-muted">
-                    Cliquez sur la bonne traduction
-                </div>
-                <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-point="linguiste:5">
-                    C'est les vacances scolaires
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Il fait très chaud
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    C'est la canicule
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        это школьные каникулы
+                    </blockquote>
+                    <div class="text-muted">
+                        Cliquez sur la bonne traduction
+                    </div>
+                    <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-point="linguiste:5" type="submit">
+                        C'est les vacances scolaires
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Il fait très chaud
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        C'est la canicule
+                    </button>
+                </form>
             </div>
             <div id="test-japonais" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler japonais ?</h2>
-                <blockquote>
-                    夜明けと共に起き、日暮れと共に眠りにつく。
-                </blockquote>
-                <div class="text-muted">
-                    Cliquez sur la bonne traduction
-                </div>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Elle s'endort au lever du soleil et se réveille lorsqu'il se couche
-                </button>
-                <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5">
-                    Elle se réveille au lever du soleil et s'endort lorsqu'il se couche
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Elle se réveille lorsque le soleil est à son apogée
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        夜明けと共に起き、日暮れと共に眠りにつく。
+                    </blockquote>
+                    <div class="text-muted">
+                        Cliquez sur la bonne traduction
+                    </div>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Elle s'endort au lever du soleil et se réveille lorsqu'il se couche
+                    </button>
+                    <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5" type="submit">
+                        Elle se réveille au lever du soleil et s'endort lorsqu'il se couche
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Elle se réveille lorsque le soleil est à son apogée
+                    </button>
+                </form>
             </div>
             <div id="test-persan" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler persan ?</h2>
-                <blockquote>
-                    Dar tâbestân dust dârim piâde ravi konim
-                </blockquote>
-                <div class="text-muted">
-                    Cliquez sur la bonne traduction
-                </div>
-                <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5">
-                    En été, nous aimons nous promener
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    En été, nous aimons courir
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    En été, nous aimons nous reposer
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        Dar tâbestân dust dârim piâde ravi konim
+                    </blockquote>
+                    <div class="text-muted">
+                        Cliquez sur la bonne traduction
+                    </div>
+                    <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5" type="submit">
+                        En été, nous aimons nous promener
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        En été, nous aimons courir
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        En été, nous aimons nous reposer
+                    </button>
+                </form>
             </div>
             <div id="test-turc" class="test-langue">
                 <h2>Êtes-vous sûr de bien parler turc ?</h2>
-                <blockquote>
-                    Kolay gelsin
-                </blockquote>
-                <div class="text-muted">
-                    Cliquez sur la bonne traduction
-                </div>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Que cela vienne facilement
-                </button>
-                <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2">
-                    Tous mes voeux de bonheur
-                </button>
-                <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5">
-                    Bon courage
-                </button>
+                <form data-next="geographie" action="#">
+                    <blockquote>
+                        Kolay gelsin
+                    </blockquote>
+                    <div class="text-muted">
+                        Cliquez sur la bonne traduction
+                    </div>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Que cela vienne facilement
+                    </button>
+                    <button class="btn btn-default" data-error="Mauvaise réponse ! Nous n'aimons pas les menteurs..." data-points="linguiste:-2,analyste:-2,action:-2,crypto:-2" type="submit">
+                        Tous mes voeux de bonheur
+                    </button>
+                    <button class="btn btn-default" data-success="Intéressant... La DGSE garde un oeil sur vous" data-points="linguiste:5" type="submit">
+                        Bon courage
+                    </button>
+                </form>
             </div>
 
 
