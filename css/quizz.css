@@ -5,3 +5,89 @@ section {
 #test-langues .test-langue {
 	display: none;
 }
+
+.bootstrap-select {
+	margin-bottom: 2.5rem;
+}
+
+.btn.dropdown-toggle.bs-placeholder.btn-info {
+  background:white;
+  border-color: #bf9f00;
+}
+
+.btn.dropdown-toggle {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+
+.main-background {
+  background:white right center no-repeat;
+  background-size: cover;
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:55%;
+  z-index:50;
+}
+
+.main-background:after {
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(10, 10, 10, 0.4);
+}
+
+main {
+  width:45%;
+  padding:16px 25px;
+  background: url('../assets/images/pattern.png');
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  overflow: auto;
+  z-index:100;
+  box-shadow: 10px 0 20px 0 rgba(0,0,0,0.4);
+}
+
+main header {
+  background: #fedc32;
+  color: black;
+  border-bottom: 5px solid black;
+  margin:-16px -25px 0;
+  padding:16px 25px;
+}
+
+main header h1 {
+  font-weight: bolder;
+}
+
+main .btn.btn-default.btn-block.btn-lg {
+	margin-top:1.5rem !important;
+	white-space: normal;
+}
+
+main blockquote {
+  background: black;
+  font-size: 1.4em;
+}
+
+.map-wrap {
+    height:0;
+    margin-top:1.5rem;
+    padding-top:97.63%; /* 1200px/1230px */
+    position: relative;
+}
+
+.map-wrap svg {
+  height: 100%;
+  display:block;
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}

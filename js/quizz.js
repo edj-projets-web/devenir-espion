@@ -60,7 +60,7 @@ $(function() {
 
     //Réponses sauvegardées
     var answers = {
-        'languesChoices': null
+        'languesChoices': []
     }
 
     displaySection('choix-langues');
@@ -69,10 +69,11 @@ $(function() {
         evt.preventDefault();
         var sectionId = $(this).closest('section').attr('id');
         var next = $(this).data('next');
-        if(evt.target.cancelled) sectionId = null;
         switch (sectionId) {
             case 'choix-langues':
-              if(!answers.languesChoices) answers.languesChoices = $('#choix-langues select').val();
+              if(!evt.target.cancelled) {
+                answers.languesChoices = $('#choix-langues select').val();
+              }
               if (answers.languesChoices.length == 0) return displaySection('geographie');
               return displaySection(next);
               break;
@@ -102,6 +103,11 @@ $(function() {
                 break;
             default:
                 break;
+        }
+
+        var url = $('section#' + id).data('background');
+        if (url) {
+          $('.main-background').css("background-image", "url(" + url + ")");
         }
     }
 });

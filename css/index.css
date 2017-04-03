@@ -1,4 +1,19 @@
 .intro {
-	border: 5px white solid;
+	border: 5px rgba(255, 255, 255, 0.9) solid;
 	padding: 25px;
+  box-shadow: 10px 10px 0 0 black;
+}
+
+.icon {
+	margin-top:2em;
+}
+
+.wrapper {
+  padding-top:20vh;
+}
+
+h1 {
+  color:white;
+  font-weight: bolder;
+  font-size: 4.5rem;
 }
