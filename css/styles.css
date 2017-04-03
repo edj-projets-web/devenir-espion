@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Muli|Chivo');
 
+body {
+  background: url('../assets/images/pattern.png');
+}
+
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
