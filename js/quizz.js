@@ -7,10 +7,10 @@ $(function() {
     };
 
     var minPointsByProfile = {
-        linguiste: 26,
-        analyste: 30,
-        action: 36,
-        crypto: 31
+        linguiste: 28,
+        analyste: 29,
+        action: 37,
+        crypto: 34,
     };
 
     var overlay = {
