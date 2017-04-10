@@ -100,6 +100,7 @@ $(function() {
               }
               else {
                 selectSection('sport-test');
+                displaySection('sport-test');
               }
               break;
             case 'code-notions':
@@ -181,8 +182,8 @@ $(function() {
         'sciences': []
     }
 
-    displaySection('choix-langues');
-    // displaySection('transition2');
+    // displaySection('choix-langues');
+    displaySection('sport');
 
     function selectSection(id) {
         overlay.setSection(id);
