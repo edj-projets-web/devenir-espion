@@ -821,7 +821,42 @@
             </form>
         </section>
         <section class="lead intro" id="finale">
-            Le recrutement est maintenant terminé. Le verdict va tomber...
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-3 icon">
+                <img src="assets/images/icon.svg" alt="" width="100%">
+              </div>
+              <div class="col-xs-8">
+                <h1 class="hidden" data-profile="linguiste">Vous êtes linguiste</h1>
+                <h1 class="hidden" data-profile="analyste">Vous êtes analyste</h1>
+                <h1 class="hidden" data-profile="action">Vous êtes action</h1>
+                <h1 class="hidden" data-profile="crypto">Vous êtes crypto</h1>
+                <h1 class="hidden" data-profile="">Vous n'avez pas été retenu</h1>
+
+                <div class="wrapper">
+                  <div data-profile="linguiste" class="hidden">
+                    (linguiste) Le recrutement est maintenant terminé. Le verdict va tomber...
+                  </div>
+                  <div data-profile="analyste" class="hidden">
+                    (analyste) Le recrutement est maintenant terminé. Le verdict va tomber...
+                  </div>
+                  <div data-profile="action" class="hidden">
+                    (action) Le recrutement est maintenant terminé. Le verdict va tomber...
+                  </div>
+                  <div data-profile="crypto" class="hidden">
+                    (crypto) Le recrutement est maintenant terminé. Le verdict va tomber...
+                  </div>
+                  <div data-profile="" class="hidden">
+                    Le recrutement est maintenant terminé. Le verdict va tomber...
+                  </div>
+                  <br />
+                  <div>
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
     </main>
     <footer>
@@ -836,6 +871,24 @@
     <!-- Custom -->
     <script src="./js/main.js"></script>
     <script src="./js/quizz.js"></script>
+
+    <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
+
 </body>
 
 </html>

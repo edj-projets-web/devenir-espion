@@ -6,6 +6,13 @@ $(function() {
         crypto: 0
     };
 
+    var minPointsByProfile = {
+        linguiste: 26,
+        analyste: 30,
+        action: 36,
+        crypto: 31
+    };
+
     var overlay = {
       selectedSection: null,
       setSection: function(val) {
@@ -131,9 +138,25 @@ $(function() {
       overlay.setSection(id);
     }
 
+    function updateFinalResult() {
+      var validated = '';
+      // Trouve le profile qui a le plus de points et qui est valide
+      $.each(profiles, function(key, points) {
+        if(points >= minPointsByProfile[key]) {
+          if(validated === '' || points >= profiles[validated]) {
+            validated = key;
+          }
+        }
+      });
+      // Affiche le bon profile à la fin
+      $("#finale [data-profile='" + validated + "']").removeClass('hidden');
+    }
+
     function displaySection(id) {
         $('section').hide();
         $('section#' + id).show();
+        updateFinalResult();
+
         switch (id) {
             case 'test-langues':
                 $('#test-langues div').hide();
