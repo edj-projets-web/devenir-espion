@@ -2,6 +2,12 @@ section {
 	display: none;
 }
 
+.intro {
+  border: 5px rgba(255, 255, 255, 0.9) solid;
+  padding: 25px;
+  box-shadow: 10px 10px 0 0 black;
+}
+
 #test-langues .test-langue {
 	display: none;
 }

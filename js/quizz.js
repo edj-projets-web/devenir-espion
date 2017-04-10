@@ -14,31 +14,31 @@ $(function() {
     };
 
     var overlay = {
-      selectedSection: null,
-      setSection: function(val) {
-        this.selectedSection = val;
-      },
-      findNextSection: function() {
-        var currentIdx = $('section[id]').index($('section[id]:visible'));
-        return $('section[id]').eq(currentIdx + 1).attr('id');
-      },
-      default: function(msg, cls, next) {
-        next = next || this.selectedSection || this.findNextSection();
-        $(".overlay .content").html(msg);
-        $(".overlay").attr('class', 'overlay overlay--' + cls).fadeIn();
-        $(".overlay .btn").off('click').on('click', function() {
-          // Display the rright section
-          if(next) displaySection(next);
-          // Hide the overlay
-          $(".overlay").fadeOut();
-        });
-      },
-      error: function(msg, next) {
-        this.default(msg, 'error', next);
-      },
-      success: function(msg, next) {
-        this.default(msg, 'success', next);
-      }
+        selectedSection: null,
+        setSection: function(val) {
+            this.selectedSection = val;
+        },
+        findNextSection: function() {
+            var currentIdx = $('section[id]').index($('section[id]:visible'));
+            return $('section[id]').eq(currentIdx + 1).attr('id');
+        },
+        default: function(msg, cls, next) {
+            next = next || this.selectedSection || this.findNextSection();
+            $(".overlay .content").html(msg);
+            $(".overlay").attr('class', 'overlay overlay--' + cls).fadeIn();
+            $(".overlay .btn").off('click').on('click', function() {
+                // Display the rright section
+                if (next) displaySection(next);
+                // Hide the overlay
+                $(".overlay").fadeOut();
+            });
+        },
+        error: function(msg, next) {
+            this.default(msg, 'error', next);
+        },
+        success: function(msg, next) {
+            this.default(msg, 'success', next);
+        }
     };
 
     $('form').submit(function(evt) {
@@ -47,22 +47,62 @@ $(function() {
         var next = $(this).data('next');
         switch (sectionId) {
             case 'choix-langues':
-              if(!evt.target.cancelled) {
-                answers.languages = $('#choix-langues select').val();
-              }
+                if (!evt.target.cancelled) {
+                    answers.languages = $('#choix-langues select').val();
+                }
 
-              if (answers.languages.length == 0) return selectSection('geographie');
-              return selectSection(next);
-              break;
+                if (answers.languages.length == 0) {
+                    return selectSection('geographie');
+                }
+
+                return displaySection(next);
+                break;
             case 'test-langues':
                 var lang = evt.target.parentElement.id.split('-')[1];
                 var idLang = answers.languages.indexOf(lang);
-                answers.languages.splice(idLang,1);
-                if(answers.languages.length === 0) return selectSection('geographie');
+                answers.languages.splice(idLang, 1);
+                if (answers.languages.length === 0) return selectSection('geographie');
                 return selectSection('test-langues');
                 break;
+            case 'sciences':
+              if (!evt.target.cancelled) {
+                  answers.sciences = $('#sciences select').val();
+              }
+
+              if (answers.sciences.length == 0) {
+                  return selectSection('transition1');
+              }
+
+              return displaySection(next);
+              break;
+            case 'test-sciences':
+              var science = evt.target.parentElement.id.split('-')[1];
+              var idScience = answers.sciences.indexOf(science);
+              answers.sciences.splice(idScience, 1);
+              if (answers.sciences.length === 0) return selectSection('transition1');
+              return selectSection('test-sciences');
+              break;
+            case 'transition1':
+              selectSection('sport')
+              return displaySection('sport')
+              break;
+            case 'sport':
+              if (evt.target.cancelled) {
+                selectSection('rendez-vous-secret');
+              }
+              else {
+                selectSection('sport-test');
+              }
+              break;
+            case 'code-notions':
+                if (evt.target.cancelled) {
+                  return selectSection('sciences');
+                }
+                else {
+                  return selectSection('code-fonction');
+                }
+                break;
             default:
-                console.log('default')
                 return selectSection(next);
         }
     });
@@ -74,35 +114,35 @@ $(function() {
 
     // Lorsque l'on click sur un bouton avec un attribut data-error, affiche un toast avec le contenu de l'attribut
     $('button[data-error]').click(function() {
-      setTimeout(function() {
-        overlay.error($(this).data('error'));
-      }.bind(this), 50);
+        setTimeout(function() {
+            overlay.error($(this).data('error'));
+        }.bind(this), 50);
     });
 
     // Lorsque l'on click sur un bouton avec un attribut data-success, affiche un toast avec le contenu de l'attribut
     $('button[data-success]').click(function() {
-      setTimeout(function() {
-        overlay.success($(this).data('success'));
-      }.bind(this), 50);
+        setTimeout(function() {
+            overlay.success($(this).data('success'));
+        }.bind(this), 50);
     });
 
     //////CARTE
     // Lorsqu'on clique sur un pays de la carte qui n'est pas le Kenya, on a perdu
     $('#carte-quizz path:not(#Kenia)').click(function() {
         if (answers.wrongCountries === 0) {
-          overlay.error('Nous vous accordons exceptionnellement une deuxième chance. Ne la gaspillez pas !', null);
-          // Augmente le compteur de mauvais pays
-          answers.wrongCountries++;
+            overlay.error('Nous vous accordons exceptionnellement une deuxième chance. Ne la gaspillez pas !', null);
+            // Augmente le compteur de mauvais pays
+            answers.wrongCountries++;
         } else {
-          overlay.error('Vous êtes nul en géographie, ou vos doigts sont trop gros pour viser dans le mille ?', 'histoire');
+            overlay.error('Vous êtes nul en géographie, ou vos doigts sont trop gros pour viser dans le mille ?', 'histoire');
         }
     });
     // Lorsqu'on clique sur le Kenya, on a gagné
     $('#carte-quizz path#Kenia').click(function() {
         if (answers.wrongCountries === 0) {
-          overlay.success('Bravo, en plein dans le mille!', 'histoire');
+            overlay.success('Bravo, en plein dans le mille!', 'histoire');
         } else {
-          overlay.success('C\'est beaucoup mieux. Tâchez de rester concentré(e) !', 'histoire');
+            overlay.success('C\'est beaucoup mieux. Tâchez de rester concentré(e) !', 'histoire');
         }
     });
     ////////
@@ -129,27 +169,29 @@ $(function() {
     //Réponses sauvegardées
     var answers = {
         'languages': [],
-        'wrongCountries': 0
+        'wrongCountries': 0,
+        'sciences': []
     }
 
-    displaySection('choix-langues');
+    // displaySection('choix-langues');
+    displaySection('sport');
 
     function selectSection(id) {
-      overlay.setSection(id);
+        overlay.setSection(id);
     }
 
     function updateFinalResult() {
-      var validated = '';
-      // Trouve le profile qui a le plus de points et qui est valide
-      $.each(profiles, function(key, points) {
-        if(points >= minPointsByProfile[key]) {
-          if(validated === '' || points >= profiles[validated]) {
-            validated = key;
-          }
-        }
-      });
-      // Affiche le bon profile à la fin
-      $("#finale [data-profile='" + validated + "']").removeClass('hidden');
+        var validated = '';
+        // Trouve le profile qui a le plus de points et qui est valide
+        $.each(profiles, function(key, points) {
+            if (points >= minPointsByProfile[key])  {
+                if (validated === '' || points >= profiles[validated]) {
+                    validated = key;
+                }
+            }
+        });
+        // Affiche le bon profile à la fin
+        $("#finale [data-profile='" + validated + "']").removeClass('hidden');
     }
 
     function displaySection(id) {
@@ -164,13 +206,24 @@ $(function() {
                     $('div#test-' + val).show();
                 });
                 break;
+            case 'test-sciences':
+                $('#test-sciences div').hide();
+                answers.sciences.forEach(function(val) {
+                    $('div#test-' + val).show();
+                });
+                break;
+            case 'transition1':
+              Typed.new('#transition1 .intro__typed', {
+                strings: ["Vous avez passé la première épreuve. Ne vous réjouissez pas trop vite, c'était la plus facile. Vous allez maintenent être mis en situation. Prêt ?"],
+                typeSpeed: 0
+              });
             default:
                 break;
         }
 
         var url = $('section#' + id).data('background');
         if (url) {
-          $('.main-background').css("background-image", "url(" + url + ")");
+            $('.main-background').css("background-image", "url(" + url + ")");
         }
     }
 });
