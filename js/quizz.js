@@ -86,6 +86,14 @@ $(function() {
               selectSection('sport')
               return displaySection('sport')
               break;
+            case 'transition2':
+              selectSection('nouveau-job')
+              return displaySection('nouveau-job')
+              break;
+            case 'transition3':
+              selectSection('situation-matrimoniale')
+              return displaySection('situation-matrimoniale')
+              break;
             case 'sport':
               if (evt.target.cancelled) {
                 selectSection('rendez-vous-secret');
@@ -174,7 +182,7 @@ $(function() {
     }
 
     // displaySection('choix-langues');
-    displaySection('sport');
+    displaySection('transition2');
 
     function selectSection(id) {
         overlay.setSection(id);
@@ -217,6 +225,19 @@ $(function() {
                 strings: ["Vous avez passé la première épreuve. Ne vous réjouissez pas trop vite, c'était la plus facile. Vous allez maintenent être mis en situation. Prêt ?"],
                 typeSpeed: 0
               });
+              break;
+            case 'transition2':
+              Typed.new('#transition2 .intro__typed', {
+                strings: ["Vous allez démarrer la troisième épreuve. Nous allons maintenant mettre vos nerfs à l'épreuve lors d'un entretien psychologique. Soyez sincère"],
+                typeSpeed: 0
+              });
+              break;
+            case 'transition3':
+              Typed.new('#transition2 .intro__typed', {
+                strings: ["Bravo, vous venez de terminer les épreuves. Nos recruteurs sont en train d'étudier votre candidature. Mais les compétences ne suffisent pas. Nous devons être sûrs de pouvoir compter sur vous. Passons à l'ultime phase de recrutement : l'enquête de sécurité..."],
+                typeSpeed: 0
+              });
+              break;
             default:
                 break;
         }
