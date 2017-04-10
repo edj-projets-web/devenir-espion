@@ -432,7 +432,7 @@
         <!-- Si l'utilisateur répond Oui à cette question, il doit répondre à une question de vérification -->
         <section data-background="assets/images/cultureg.jpeg" id="code-fonction">
             <h2> Parmi les trois propositions suivantes, laquelle n’est pas un éditeur de code?</h2>
-            <form data-next="biologie" action="#">
+            <form data-next="sciences" action="#">
                 <div class="text-muted">
                     Sélectionnez la bonne réponse
                 </div>
@@ -447,20 +447,64 @@
                 </button>
             </form>
         </section>
-        <section data-background="assets/images/cultureg.jpeg" id="biologie">
-            <h2>Vous estimez-vous à l'aise dans l'un des domaines suivants : biologie, chimie, nucléaire, mathématiques ?</h2>
-            <form data-next="transition1" action="#">
-                <div class="text-muted">
-                    Sélectionnez votre réponse
-                </div>
-                <button class="btn btn-default btn-block btn-lg" data-succes="Vous êtes en bonne voie pour devenir le prochain 'chiffre' de la boîte !" data-points="crypto:5">
-                    Oui
-                </button>
-                <button class="btn btn-default btn-block btn-lg" data-error="Alors, pas geek pour un sou ?">
-                    Non
-                </button>
-            </form>
-        </section>
+        <section data-background="assets/images/cultureg.jpeg" id="sciences">
+            <h2>Vous estimez-vous à l'aise dans l'un des domaines suivants ?</h2>
+            <form data-next="chimie" action="#">
+                <label>
+            <div class="text-muted">Sélectionnez un ou plusieurs choix</div>
+                <select class="selectpicker" multiple>
+                    <option value="chimie">Chimie</option>
+                    <option value="nucléaire">Nucléaire</option>
+                    <option value="mathématiques">Mathématiques</option>
+                </select>
+                </label>
+                </section>
+              <button class="btn btn-primary btn-lg" type="submit">Valider</button>
+              <button class="btn btn-default btn-lg" data-error="Alors, pas geek pour un sou ?" onclick="this.form.cancelled=true;">Je n'ai pas de compétences dans ces domaines</button>
+           <section data-background="assets/images/cultureg.jpeg" id="chimie">
+               <h2>Qu'est-ce qu'un colloïde ?</h2>
+              <form data-next="nucleaire" action="#">
+                  <div class="text-muted">Sélectionnez la bonne réponse</div>
+                    <button class="btn btn-default btn-block btn-lg" data-error="Mauvaise réponse !">
+                        Un mélange d'un liquide et d'une suspension de particules solides de si grande taille qu'elles se répartissent de façon homogène
+                    </button>
+                    <button class="btn btn-default btn-block btn-lg" data-success="Bonne réponse !" data-points="crytpo:5">
+                        Un mélange d'un liquide et d'une suspension de particules solides de si petite taille qu'elles se répartissent de façon homogène
+                    </button>
+                    <button class="btn btn-default btn-block btn-lg" data-error="Mauvaise réponse !">
+                        Un mélange d'un liquide et d'une suspension de particules solides qui se répartissent de façon hétérogène
+                    </button>
+             </section>
+             <section data-background="assets/images/cultureg.jpeg" id="nucleaire">
+                   <h2>Parmi les éléments chimiques suivants, lequel est un combustible nucléaire ?</h2>
+                 <form data-next="mathematiques" action='#'>
+                     <div class="text-muted">Sélectionnez la bonne réponse</div>
+                        <button class="btn btn-default btn-block btn-lg" data-success="Bonne réponse !" data-points="crypto:5">
+                            L'uranium
+                        </button>
+                        <button class="btn btn-default btn-block btn-lg" data-error="Mauvaise réponse !">
+                            Le carbone
+                        </button>
+                        <button class="btn btn-default btn-block btn-lg" data-error="Mauvaise réponse !">
+                            Le polonium
+                        </button>
+               </section>
+               <section data-background="assets/images/cultureg.jpeg" id="mathematiques">
+                   <h2>Qu'est-ce que le théorème de la bijection ?</h2>
+                <form data-next="transition1" action='#'>
+                    <div class="text-muted">Sélectionnez la bonne réponse</div>
+                    <button class="btn btn-default btn-block btn-lg" data-error="Mauvaise réponse !">
+                        L'affirmation qu'une fonction continue sur un intervalle prend deux valeurs
+                    </button>
+                    <button class="btn btn-default btn-block btn-lg" data-error="Mauvaise réponse !">
+                        La méthode qui consiste à partager un intervalle en deux parties
+                    </button>
+                    <button class="btn btn-default btn-block btn-lg" data-success="Bonne réponse !" data-points="crypto:5">
+                        L'affirmation qu'une fonction continue et strictement monotone sur un intervalle constitue une injection entre cet intervalle et son image
+                    </button>
+                    </section>
+               
+                
         <section id="transition1" class="transition">
             Vous avez passé la première épreuve. Ne vous réjouissez pas trop vite, c'était la plus facile. Vous allez maintenent être mis en situation. Prêt ?
             <form data-next="sport" action="#">
