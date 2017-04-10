@@ -181,8 +181,8 @@ $(function() {
         'sciences': []
     }
 
-    // displaySection('choix-langues');
-    displaySection('transition2');
+    displaySection('choix-langues');
+    // displaySection('transition2');
 
     function selectSection(id) {
         overlay.setSection(id);
