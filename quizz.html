@@ -668,29 +668,28 @@
         <section data-background="assets/images/entretien.jpeg" id="organisation">
             <h2>Votre nouveau patron est très exigeant et vous donne une liste de choses à faire vraiment impossible :</h2>
             <form data-next="travail-equipe" action="#">
-                <div class="text-muted">
-                    Sélectionnez votre réponse
-                    <div>
-                        <button class='btn btn-default btn-block btn-lg' data-success="Bonne réponse. On aime les agents minutieux sachant se concentrer sur un objectif précis" data-points="linguiste:1,crypto:1,action:2,analyste:2">
-                            Je préfère me concentrer sur une seule tâche à la fois, quitte à ne pas atteindre tous mes objectifs
-                        </button>
-                        <button class="btn btn-default btn-block btn-lg" data-error="Ce trait de votre personnalité laisse supposer un éparpillement et des difficultés de concentration. Pas terrible...">
-                            Je sais faire plusieurs choses en même temps donc je donne mon maximum pour réaliser toutes mes tâches
-                        </button>
-                    </div>
+                <div class="text-muted">Sélectionnez votre réponse</div>
+                <button class='btn btn-default btn-block btn-lg' data-success="Bonne réponse. On aime les agents minutieux sachant se concentrer sur un objectif précis" data-points="linguiste:1,crypto:1,action:2,analyste:2">
+                    Je préfère me concentrer sur une seule tâche à la fois, quitte à ne pas atteindre tous mes objectifs
+                </button>
+                <button class="btn btn-default btn-block btn-lg" data-error="Ce trait de votre personnalité laisse supposer un éparpillement et des difficultés de concentration. Pas terrible...">
+                    Je sais faire plusieurs choses en même temps donc je donne mon maximum pour réaliser toutes mes tâches
+                </button>
+            </form>
         </section>
         <section data-background="assets/images/entretien.jpeg" id="travail-equipe">
             <h2>Vos collègues sont tous très différents et vous apprennez à les connaître : </h2>
             <form data-next="amour" action="#">
                 <div class="text-muted">
                     Sélectionnez votre réponse
-                    <button class="btn btn-default btn-block btn-lg" data-error="Vous pensiez que c'était un atout, n'est-ce pas ? Il est important d'être sociable, mais s'ouvrir trop rapidement est un défaut pour un agent !">
-                        Je suis sociable, ouvert(e) aux autres et je n'hésite pas à faire des compliments
-                    </button>
-                    <button class="btn btn-default btn-block btn-lg" data-success="Bien ! Ce n'est pas que nous aimons les gens négatifs, mais nous préférons les regards critiques" data-points="linguiste:1,analyste:2,crypto:1,action:2">
-                        Je remarque d'abord les failles et les défauts des personnes qui m'entourent
-                    </button>
                 </div>
+                <button class="btn btn-default btn-block btn-lg" data-error="Vous pensiez que c'était un atout, n'est-ce pas ? Il est important d'être sociable, mais s'ouvrir trop rapidement est un défaut pour un agent !">
+                    Je suis sociable, ouvert(e) aux autres et je n'hésite pas à faire des compliments
+                </button>
+                <button class="btn btn-default btn-block btn-lg" data-success="Bien ! Ce n'est pas que nous aimons les gens négatifs, mais nous préférons les regards critiques" data-points="linguiste:1,analyste:2,crypto:1,action:2">
+                    Je remarque d'abord les failles et les défauts des personnes qui m'entourent
+                </button>
+            </form>
         </section>
         <section data-background="assets/images/entretien.jpeg" id="amour">
             <h2>Vous êtes célibataire et vous rencontrez quelqu'un qui vous plaît au bureau : </h2>
@@ -703,6 +702,7 @@
                 <button class="btn btn-default btn-block btn-lg" data-success="Loin d'être une agence matrimoniale, la DGSE préfèrent les agents qui savent faire la part des choses entre le professionnel et l'intime, sans se laisser perturber" data-points="linguiste:1,analyste:2,crypto:1,action:2">
                     Le travail est une chose, l'amour en est une autre : vous ne vous prenez pas la tête et s'il doit se passer quelque chose, ce sera en dehors des horaires de bureau
                 </button>
+            </form>
         </section>
         <section data-background="assets/images/entretien.jpeg" id="stress">
             <img src="assets/images/virus.png" alt="" width="100%">
